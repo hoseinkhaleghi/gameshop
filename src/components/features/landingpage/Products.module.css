@@ -6,15 +6,15 @@
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
-body
+/* body
 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem;
-	background: linear-gradient(#4ba9e9 0,#4ba9e9 50%,#fff 50%,#fff 100%);
-	min-height: 100vh;
-}
+	display: flex; */
+	/* justify-content: center;
+	align-items: center; */
+	/* gap: 2rem; */
+	/* background: linear-gradient(#4ba9e9 0,#4ba9e9 50%,#fff 50%,#fff 100%); */
+	/* min-height: 100vh; */
+/* } */
 .card 
 {
 	position: relative;
