@@ -9,6 +9,7 @@
 .cont
 {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
@@ -25,6 +26,7 @@
 	box-shadow: 0 15px 45px rgba(0,0,0,0.1);
 	overflow: hidden;
 	transition: 0.5s ease-in-out;
+	
 }
 .card:hover 
 {
@@ -48,7 +50,7 @@
 }
 .card:hover .imgBx  img 
 {
-	transform: rotate(-35deg) translateX(-20px);
+	transform: rotate(-1deg) translateX(-20px);
 }
 .card .details 
 {
@@ -65,7 +67,7 @@
 }
 .card:hover .details 
 {
-	left: 300px;
+	right: 300px;
 }
 .card .details::before 
 {
