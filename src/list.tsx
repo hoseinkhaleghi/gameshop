@@ -9,21 +9,21 @@ export const list =[
     id: 1,
     name: "id labore ex et quam laborum",
     email: "Eliseo@gardner.biz",
-    img:{eldenps5},
+    img:eldenps5,
     body: ""
     },
     {
     id: 2,
     name: "quo vero reiciendis velit similique earum",
     email: "Jayne_Kuhic@sydney.com",
-    img:{eldenps1},
+    img:eldenps1,
     body: ""
     },
     {
     id: 3,
     name: "odio adipisci rerum aut animi",
     email: "Nikita@garfield.biz",
-    img:{eldenps4},
+    img:eldenps4,
 
   "body": ""
     },
@@ -31,14 +31,14 @@ export const list =[
     id: 4,
     name: "alias odio sit",
     email: "Lew@alysha.tv",
-    img:{eldenps3},
+    img:eldenps3,
     body: ""
     },
     {
     id: 5,
     name: "vero eaque aliquid doloribus et culpa",
     email: "Hayden@althea.biz",
-    img:{eldenps2},
+    img:eldenps2,
     body: ""
     }
 ]
