@@ -12,11 +12,13 @@ import PS from "./assets/images/ps.jpg";
 export const list = [
   {
     id: 1,
-    name: "id labore ex et quam laborum",
+    name: "Elden Ring",
     email: "Eliseo@gardner.biz",
+    company:"FromSoftware",
     imgps5: eldenps5,
     imgxbox: eldenxbox,
-    imgpc:eldenxpc,
+    Year: 2022,
+    imgpc: eldenxpc,
     platform: {
       pc: PC,
       xbox: XBOX,
@@ -25,11 +27,13 @@ export const list = [
   },
   {
     id: 2,
-    name: "quo vero reiciendis velit similique earum",
+    name: "God Of War Ragnarok",
     email: "Jayne_Kuhic@sydney.com",
+    company:"Santa Monica",
     imgps5: eldenps1,
     imgxbox: eldenxbox,
-    imgpc:eldenxpc,
+    Year: 2022,
+    imgpc: eldenxpc,
     platform: {
       pc: PC,
       xbox: XBOX,
@@ -38,11 +42,13 @@ export const list = [
   },
   {
     id: 3,
-    name: "odio adipisci rerum aut animi",
+    name: "Forza Horizon 5",
     email: "Nikita@garfield.biz",
+    company:"Microsoft",
     imgps5: eldenps4,
     imgxbox: eldenxbox,
-    imgpc:eldenxpc,
+    Year: 2021,
+    imgpc: eldenxpc,
     platform: {
       pc: PC,
       xbox: XBOX,
@@ -51,11 +57,13 @@ export const list = [
   },
   {
     id: 4,
-    name: "alias odio sit",
+    name: "GTA V",
     email: "Lew@alysha.tv",
+    company:"Rock Star",
     imgps5: eldenps3,
     imgxbox: eldenxbox,
-    imgpc:eldenxpc,
+    Year: 2013,
+    imgpc: eldenxpc,
     platform: {
       pc: PC,
       xbox: XBOX,
@@ -64,15 +72,33 @@ export const list = [
   },
   {
     id: 5,
-    name: "vero eaque aliquid doloribus et culpa",
+    name: "The Last Of Us Part 2",
     email: "Hayden@althea.biz",
+    company:"Naughty Dog",
+    Year: 2020,
     imgps5: eldenps2,
     imgxbox: eldenxbox,
-    imgpc:eldenxpc,
+    imgpc: eldenxpc,
+    platform: {
+      pc: PC,
+      xbox: XBOX,
+      ps: PS,
+    },
+  },  {
+    id: 6,
+    name: "The Witcher 3",
+    email: "Hayden@althea.biz",
+    company:"CD Projekt",
+    Year: 2015,
+    imgps5: eldenps2,
+    imgxbox: eldenxbox,
+    imgpc: eldenxpc,
     platform: {
       pc: PC,
       xbox: XBOX,
       ps: PS,
     },
   },
+
 ];
+

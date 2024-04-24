@@ -9,11 +9,12 @@
 .cont
 {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	background: linear-gradient(#4ba9e9 0,#4ba9e9 50%,#fff 50%,#fff 100%);
+	gap: 4rem;
+	/* background: linear-gradient(#4ba9e9 0,#4ba9e9 50%,#fff 50%,#fff 100%); */
 	min-height: 100vh;
 }
 .card 
@@ -58,7 +59,7 @@
 	left: 0;
 	width: 300px;
 	height: 100%;
-	background: #4ba9e9;
+	background: #090a0a;
 	display: flex;
 	justify-content: center;
 	padding: 20px;
