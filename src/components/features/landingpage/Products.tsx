@@ -1,24 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GrFavorite } from "react-icons/gr";
 import { MdOutlineFavorite } from "react-icons/md";
 
 import { list } from "../../../list";
 import styles from "./Products.module.css";
 function Products() {
-  // const platform = list.map((item)=>(item.platform))
   const [platform, setPlatform] = useState("ps5");
-  const [favorite, setFavorite] = useState(false);
-  const check = (e) => {
-    e.preventDefault();
-    console.log(e);
-  };
+  // const [favorite, setFavorite] = useState(false);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    setData(list);
+  }, [list]);
 
-  // console.log(Year)
+  function handleFavorite(id) {
+    const newFavorites = data.map((item) => {
+      return item.id === id ? { ...item, favorite: !item.favorite } : item;
+    });
+
+    setData(newFavorites);
+  }
+  console.log(data);
+
   return (
     <div className={styles.cont}>
-      {list.map((item) => (
-        <div key={item.id}>
-          <form action="" className={styles.card}>
+      {data.map((item) => (
+        <form key={item.id} action="" onSubmit={(e) => e.preventDefault()}>
+          <div className={styles.card}>
             <div className={styles.imgBx}>
               <img
                 src={
@@ -31,17 +38,24 @@ function Products() {
               />
             </div>
             <div className={styles.details}>
-              {favorite ? (
-                <div onClick={()=>{setFavorite(!favorite)}} className="text-red-500">
-                  <MdOutlineFavorite />
-                </div>
-              ) : (
-                <div onClick={()=>{setFavorite(!favorite)}} className="text-white">
-                  <GrFavorite />
-                </div>
-              )}
-
-              <h3>{item.name}</h3>
+              <div className="flex flex-row justify-between">
+                <button
+                  onClick={() => {
+                    handleFavorite(item.id);
+                  }}
+                >
+                  {item.favorite === true ? (
+                    <div className="text-red-500">
+                      <MdOutlineFavorite />
+                    </div>
+                  ) : (
+                    <div className="text-white">
+                      <GrFavorite />
+                    </div>
+                  )}
+                </button>
+                <h3 className="text-wrap">{item.name}</h3>
+              </div>
               <h4>{item.email}</h4>
               <ul className={styles.size}>
                 <li onClick={() => setPlatform("pc")}>
@@ -53,16 +67,11 @@ function Products() {
                 <li onClick={() => setPlatform("ps5")}>
                   <img src={item.platform.ps} />
                 </li>
-                {/* {platform.map((item)=>(
-                  <li><img src={item.pc} alt="" /></li>
-                ))} */}
               </ul>
-              <button className="bg-white" onClick={check}>
-                check
-              </button>
+              <button className="bg-white">Buy</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       ))}
     </div>
   );

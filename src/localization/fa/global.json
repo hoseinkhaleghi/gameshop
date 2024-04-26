@@ -1,0 +1,43 @@
+{
+  "figure": {
+    "messsage": "مدل شماره : "
+  },
+
+  "map": {
+    "messsage": "نقشه"
+  },
+
+  "about": {
+    "messsage": "درباره ما"
+  },
+  "Directly": {
+    "messsage": "پیشرفته ترین مدیریت داده های مکانی را با Leaflet-Geoman برای ایجاد و ویرایش بدون زحمت داده های مکانی تجربه کنید. مستقیما روی نقشه"
+  },
+  "HeaderAbout": {
+    "messsage": "برای انجام این پروژه از موارد زیر استفاده شده است : "
+  },
+  "reactrouter": {
+    "messsage": "برای مسیریابی اجزا از کتابخانه react-router-dom استفاده شده ."
+  },
+  "context": {
+    "messsage": "برای مدیریت state  و حالت darkmode از context استفاده شده است ."
+  },
+  "i18next": {
+    "messsage": "برای حالت چند زبانه از کتابخانه i18next استفاده شده است ."
+  },
+  "Start": {
+    "messsage": "شروع"
+  },
+  "Persian": {
+    "messsage": "فارسی"
+  },
+  "English": {
+    "messsage": "انگلیسی"
+  },
+  "reactleaflet": {
+    "messsage": "برای ایجاد نقشه تعاملی اجزا از کتابخانه reactleaflet استفاده شده ."
+  },
+  "geoman": {
+    "messsage": "پروژه Drawing Map"
+  }
+}
