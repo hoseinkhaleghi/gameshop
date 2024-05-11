@@ -10,7 +10,7 @@ function SearchBar() {
 
   return (
     <>
-      <section className="bg-gray-500 flex flex-row my-5">
+      <section className="bg-gray-500 flex flex-row rounded-md  m-5">
         <div className="w-20">
           <p>جستجو</p>
         </div>

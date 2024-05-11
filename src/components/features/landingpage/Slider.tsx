@@ -3,8 +3,9 @@ import headerpic2 from '../../../assets/images/elden2.jpeg';
 import headerpic3 from '../../../assets/images/TLOU2.jpg';
 import Button from '../../common/button/Button';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Scrollbar } from 'swiper/modules';
+import {Autoplay, Pagination, Navigation, Scrollbar } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+
 
 function Slider() {
   return (
@@ -13,7 +14,17 @@ function Slider() {
         scrollbar={{
           hide: false,
         }}
-        modules={[Scrollbar]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation,Scrollbar]}
+
+        // modules={[Scrollbar]}
         className=" bg-white w-full pb-2     "
       >
         <SwiperSlide >
