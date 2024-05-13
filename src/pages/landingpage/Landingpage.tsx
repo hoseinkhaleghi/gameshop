@@ -11,7 +11,7 @@ function Landingpage() {
 
   return (
     <div
-      dir={i18n.language == "en" ? "rtl" : "ltr"}
+      dir={i18n.language == "en" ? "ltr" : "rtl"}
       className={
         isDarkMode
           ? "text-white bg-black z-50"

@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { useDarkMode } from "../../../GlobalStates/GlobalContext";
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineLightMode } from "react-icons/md";
-import Burgermenu from "./Burgermenu";
+// import Burgermenu from "./Burgermenu";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { IoCartOutline, IoMenu } from "react-icons/io5";
-import { VscHome } from "react-icons/vsc";
-import { PiUserSquareThin, PiUsersThreeDuotone } from "react-icons/pi";
-import { CiUser } from "react-icons/ci";
+import {  IoMenu } from "react-icons/io5";
+// import { VscHome } from "react-icons/vsc";
+// import { PiUserSquareThin, PiUsersThreeDuotone } from "react-icons/pi";
+// import { CiUser } from "react-icons/ci";
 
 function Header() {
   const { t, i18n } = useTranslation("global");
@@ -25,8 +25,8 @@ function Header() {
       // dir={i18n.language == "en" ? "ltr" : "rtl"}
       className={
         isDarkMode
-          ? "text-white w-full z-10 fixed"
-          : "bg-white w-full p-2 z-10 fixed"
+          ? "bg-black text-white w-full z-50 fixed"
+          : "bg-white w-full  z-50 fixed"
       }
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 relative z-20">

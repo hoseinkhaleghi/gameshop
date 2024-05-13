@@ -25,7 +25,7 @@ function Slider() {
         modules={[Autoplay, Pagination, Navigation,Scrollbar]}
 
         // modules={[Scrollbar]}
-        className=" bg-white w-full pb-2     "
+        className="  w-full pb-2 pt-10    "
       >
         <SwiperSlide >
           <div className=" min-h-[37rem] max-h-40 overflow-hidden w-full  ">
