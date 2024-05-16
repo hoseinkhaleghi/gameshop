@@ -39,5 +39,23 @@
   },
   "geoman": {
     "messsage": "Drawing Map Project"
+  },
+  "favorite": {
+    "messsage": "Favorite"
+  },
+  "mylist": {
+    "messsage": "My List"
+  },
+  "homepage": {
+    "messsage": "Home Page"
+  },
+  "cart": {
+    "messsage": "Cart"
+  },
+  "account": {
+    "messsage": "Account"
+  },
+  "yourlist": {
+    "messsage": "Your List"
   }
 }

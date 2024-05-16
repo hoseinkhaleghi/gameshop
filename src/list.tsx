@@ -14,7 +14,7 @@ export const list = [
     id: 1,
     name: "Elden Ring",
     email: "Eliseo@gardner.biz",
-    company:"FromSoftware",
+    company: "FromSoftware",
     imgps5: eldenps5,
     imgxbox: eldenxbox,
     Year: 2022,
@@ -24,12 +24,13 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
   },
   {
     id: 2,
     name: "God Of War Ragnarok",
     email: "Jayne_Kuhic@sydney.com",
-    company:"Santa Monica",
+    company: "Santa Monica",
     imgps5: eldenps1,
     imgxbox: eldenxbox,
     Year: 2022,
@@ -39,12 +40,13 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
   },
   {
     id: 3,
     name: "Forza Horizon 5",
     email: "Nikita@garfield.biz",
-    company:"Microsoft",
+    company: "Microsoft",
     imgps5: eldenps4,
     imgxbox: eldenxbox,
     Year: 2021,
@@ -54,12 +56,13 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
   },
   {
     id: 4,
     name: "GTA V",
     email: "Lew@alysha.tv",
-    company:"Rock Star",
+    company: "Rock Star",
     imgps5: eldenps3,
     imgxbox: eldenxbox,
     Year: 2013,
@@ -69,12 +72,13 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
   },
   {
     id: 5,
     name: "The Last Of Us Part 2",
     email: "Hayden@althea.biz",
-    company:"Naughty Dog",
+    company: "Naughty Dog",
     Year: 2020,
     imgps5: eldenps2,
     imgxbox: eldenxbox,
@@ -84,11 +88,13 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
-  },  {
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
+  },
+  {
     id: 6,
     name: "The Witcher 3",
     email: "Hayden@althea.biz",
-    company:"CD Projekt",
+    company: "CD Projekt",
     Year: 2015,
     imgps5: eldenps2,
     imgxbox: eldenxbox,
@@ -98,7 +104,6 @@ export const list = [
       xbox: XBOX,
       ps: PS,
     },
+    story: "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
   },
-
 ];
-

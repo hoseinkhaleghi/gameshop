@@ -1,17 +1,18 @@
-// import {ToastContainer} from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landingpage from "./pages/landingpage/Landingpage";
-import Favorite from "./pages/favorite/Index";
+import { useTranslation } from "react-i18next";
+import { useDarkMode } from "./GlobalStates/ThemeProvider";
+import Router from "./routes/routes";
 
 function App() {
+  const { i18n } = useTranslation("global");
+  const { isDarkMode } = useDarkMode();
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Landingpage />} />
-        <Route path="/favorite" element={<Favorite />} />
-      </Routes>
-    </BrowserRouter>
+    <div
+      dir={i18n.language == "en" ? "ltr" : "rtl"}
+      className={isDarkMode ? "text-white bg-darkblue z-50" : "bg-white  "}
+    >
+      <Router />
+    </div>
   );
 }
 

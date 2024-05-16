@@ -1,7 +1,7 @@
 import headerpic from '../../../assets/images/witcher.jpg';
 import headerpic2 from '../../../assets/images/elden2.jpeg';
 import headerpic3 from '../../../assets/images/TLOU2.jpg';
-import Button from '../../common/button/Button';
+import Button from '../../common/Button/Button';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {Autoplay, Pagination, Navigation, Scrollbar } from 'swiper/modules';
 import { Link } from 'react-router-dom';

@@ -1,33 +1,38 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GrFavorite } from "react-icons/gr";
 import { MdOutlineFavorite } from "react-icons/md";
-
 import { list } from "../../../list";
 import styles from "./Products.module.css";
-import { useDarkMode } from "../../../GlobalStates/GlobalContext";
+import { useDarkMode } from "../../../GlobalStates/ThemeProvider";
+import { DataContext } from "../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
+
 function Products() {
+  const { datalist, setdatalist }= useContext(DataContext);
   const [platform, setPlatform] = useState("ps5");
-  // const [favorite, setFavorite] = useState(false);
   const { isDarkMode } = useDarkMode();
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   useEffect(() => {
-    setData(list);
+    setdatalist(list);
   }, [list]);
   const { i18n } = useTranslation("global");
 
   function handleFavorite(id) {
-    const newFavorites = data.map((item) => {
+    const newFavorites = datalist.map((item) => {
       return item.id === id ? { ...item, favorite: !item.favorite } : item;
     });
 
-    setData(newFavorites);
+    // setData(newFavorites);
+    setdatalist(newFavorites)
+    
   }
-  console.log(data);
+  // console.log("typeof isFavorite" +typeof isFavorite)
+  // console.log("typeof data" +typeof data)
+
 
   return (
     <div className={styles.cont}>
-      {data.map((item) => (
+      {datalist.map((item) => (
         <form key={item.id} action="" onSubmit={(e) => e.preventDefault()}>
           <div
             className={
@@ -46,10 +51,9 @@ function Products() {
                   }
                 />
               </div>
-              {/* <div className= {i18n.language =="en" ? `${styles.details} ${styles.left}` : `${styles.details} ${styles.right}` }> */}
-              {/* <div className={i18n.language=="en" ? styles.left : styles.left}> */}
                 <div className={i18n.language=="en" ? styles.rightdetails : styles.leftdetails}>
                   <div className="flex flex-row justify-between">
+                  <h3 className="text-wrap">{item.name}</h3>
                     <button
                       onClick={() => {
                         handleFavorite(item.id);
@@ -65,7 +69,6 @@ function Products() {
                         </div>
                       )}
                     </button>
-                    <h3 className="text-wrap">{item.name}</h3>
                   </div>
                   <h4>{item.email}</h4>
                   <ul className={styles.size}>
@@ -81,7 +84,6 @@ function Products() {
                   </ul>
                   <button className="bg-white">Buy</button>
                 </div>
-              {/* </div> */}
             </div>
           </div>
         </form>

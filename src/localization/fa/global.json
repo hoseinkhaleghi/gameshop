@@ -39,5 +39,23 @@
   },
   "geoman": {
     "messsage": "پروژه Drawing Map"
+  },
+  "favorite": {
+    "messsage": "علاقمندی ها"
+  },
+  "mylist": {
+    "messsage": "لیست من"
+  },
+  "homepage": {
+    "messsage": "صفحه اصلی"
+  },
+  "cart": {
+    "messsage": "سبد خرید"
+  },
+  "account": {
+    "messsage": "حساب کاربری"
+  },
+  "yourlist": {
+    "messsage": "لیست شما"
   }
 }

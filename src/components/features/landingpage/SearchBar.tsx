@@ -18,21 +18,21 @@ function SearchBar() {
           <Input placeholder="search" className="" />
           <div className="flex flex-row w-full gap-10 mt-6">
             <label htmlFor="year">سال ساخت</label>
-            <select name="year" id="year" className="w-72">
+            <select name="year" id="year" className="w-72 text-black ">
               {Year.map((item, index) => (
                 <option key={index}>{item}</option>
               ))}
             </select>
 
             <label htmlFor="company">سازنده</label>
-            <select name="company" id="company" className="w-72">
+            <select name="company" id="company" className="w-72 text-black">
               {Company.map((item, index) => (
                 <option key={index}>{item}</option>
               ))}
             </select>
 
             <label htmlFor="company">سازنده</label>
-            <select name="year" id="year" className="w-72">
+            <select name="year" id="year" className="w-72 text-black">
               <option value="2024">2024</option>
               <option value="2023">2023</option>
               <option value="2022">2022</option>
