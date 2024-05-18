@@ -43,7 +43,7 @@ export default function Sidebar() {
         <ul className={classNames(`lg:w-60  flex flex-col md:px-4 pt-3`)}>
           {menuItems.map((item) => (
             <Link to={item.link}>
-              <li
+              <li key={item.id}
                 className={classNames(
                   `hover:bg-darkblue hover:text-white cursor-pointer mx-2 p-3 
              rounded-sm flex  items-center justify-start gap-2`,

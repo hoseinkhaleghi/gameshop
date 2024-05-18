@@ -1,20 +1,21 @@
-import {FcGoogle} from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import Logo from "../../../../assets/logo";
-import Input from "../../../common/Input";
-import Button from "../../../common/Button";
-import {Link} from "react-router-dom";
-import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {object, string, ref} from "yup";
-import {phone_or_email_regex} from "../../../../models/regex";
-import {User} from "../../../../types/user.type";
+import Input from "../../../common/input/Input";
+import Button from "../../../common/Button/Button";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { object, string, ref } from "yup";
+import { phone_or_email_regex } from "../../../../models/regex";
+import { User } from "../../../../types/user.type";
+import Header from "../../landingpage/Header";
 
 interface Props {
   onSubmit: (data: User) => void;
   isLoading: boolean;
 }
 
-export default function SectionOne({onSubmit, isLoading}: Props) {
+export default function SectionOne({ onSubmit, isLoading }: Props) {
   const schema = object({
     fullName: string().min(2).required(),
     emailOrPhonenumber: string()
@@ -39,7 +40,7 @@ export default function SectionOne({onSubmit, isLoading}: Props) {
   const {
     register,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });

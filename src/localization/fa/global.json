@@ -57,5 +57,23 @@
   },
   "yourlist": {
     "messsage": "لیست شما"
+  },
+  "Welcome": {
+    "messsage": "خوش آمدید"
+  },
+  "SliderExplain": {
+    "messsage": "این پروژه برای آموزشگاه کندو پیاده سازی شده است"
+  },
+  "GoGames": {
+    "messsage": "بریم سراغ بازی ها"
+  },
+  "SignUp": {
+    "messsage": "ثبت نام"
+  },
+  "SignIn": {
+    "messsage": "ورود"
+  },
+  "Cando": {
+    "messsage": "کندو"
   }
 }

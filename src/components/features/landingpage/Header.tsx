@@ -30,9 +30,15 @@ function Header() {
       }
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 relative z-20">
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex-1 gap-6">
           <Link to="/">
-            <span className="text-2xl">Wizard</span>
+            <span className="text-2xl">{t("Cando.messsage")}</span>
+          </Link>
+          <Link to="/signUp">
+            <span className="text-2xl ">{t("SignUp.messsage")}</span>
+          </Link>
+          <Link to="/signin">
+            <span className="text-2xl ">{t("SignIn.messsage")}</span>
           </Link>
         </div>
         <div className="lg:flex-1 gap-3 hidden lg:flex lg:gap-x-12">
@@ -85,6 +91,9 @@ function Header() {
               <div className="-m-1.5 p-1.5 flex flex-row items-center gap-2">
                 <Link to="/">
                   <span className="text-2xl ">Wizard</span>
+                </Link>
+                <Link to="/signUp">
+                  <span className="text-2xl ">Signup</span>
                 </Link>
               </div>
               <div className="flex lg:hidden">

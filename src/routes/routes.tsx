@@ -3,14 +3,19 @@ import Landingpage from "../pages/landingpage/Landingpage";
 import Favorite from "../pages/favorite/Index";
 import Dashboard from "../pages/Dashboard/Index";
 import Settings from "../pages/settings";
+import Signup from "../pages/signup";
+import Signin from "../pages/signin";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landingpage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="favorite" element={<Favorite />} />
+          <Route path="settings" element={<Settings />} />
           <Route path="settings" element={<Settings />} />
           {/* <Route index element={<Navigate to="createmodel" />}></Route>
         <Route path="createmodel" element={<Createmodel />} />

@@ -5,8 +5,9 @@ import { getOTP, signup } from '../../services/api/user.http';
 import { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 import { User } from '../../types/user.type';
-import localStorage from 'local-storage';
+// import localStorage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/features/landingpage/Header';
 
 export default function Signup() {
   const [page, setPage] = useState(1);
@@ -34,7 +35,7 @@ export default function Signup() {
     signup({ ...user!, otp })
       .then((req) => {
         setIsLoading(false);
-        localStorage('user', req.data);
+        // localStorage('user', req.data);
         navigate('/dashboard');
       })
       .catch((error: AxiosError) => {
@@ -45,6 +46,7 @@ export default function Signup() {
 
   return (
     <section className="relative min-h-[650px] ">
+      <Header />
       <div
         style={{
           position: 'absolute',

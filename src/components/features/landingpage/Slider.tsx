@@ -1,15 +1,17 @@
-import headerpic from '../../../assets/images/witcher.jpg';
-import headerpic2 from '../../../assets/images/elden2.jpeg';
-import headerpic3 from '../../../assets/images/TLOU2.jpg';
-import Button from '../../common/Button/Button';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import {Autoplay, Pagination, Navigation, Scrollbar } from 'swiper/modules';
-import { Link } from 'react-router-dom';
-
+import headerpic from "../../../assets/images/witcher.jpg";
+import headerpic2 from "../../../assets/images/elden2.jpeg";
+import headerpic3 from "../../../assets/images/TLOU2.jpg";
+import Button from "../../common/Button/Button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Slider() {
+  const { t } = useTranslation("global");
+
   return (
-    <div>
+    <div dir="ltr">
       <Swiper
         scrollbar={{
           hide: false,
@@ -22,12 +24,11 @@ function Slider() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation,Scrollbar]}
-
+        modules={[Autoplay, Pagination, Navigation, Scrollbar]}
         // modules={[Scrollbar]}
         className="  w-full pb-2 pt-10    "
       >
-        <SwiperSlide >
+        <SwiperSlide>
           <div className=" min-h-[37rem] max-h-40 overflow-hidden w-full  ">
             <img
               className="min-h-[37rem] max-h-40 object-fill rounded-b-2xl w-full"
@@ -36,21 +37,21 @@ function Slider() {
             ></img>
             <div className="bg-darkblue absolute bottom-0 opacity-30 rounded-b-2xl right-0 left-0 top-0 w-full h-full overflow-hidden"></div>
           </div>
-          <div className="absolute lg:bottom-10 right-4  bottom-5 flex flex-col gap-2">
+          <div className="absolute lg:bottom-10 right-0 left-0 items-center bottom-5 flex flex-col gap-2">
             <h1 className="font-bold text-white text-xl">
-              سرویس پرینت سه بعدی
+               {t("Welcome.messsage")}
             </h1>
             <p className=" text-white text-xs font-medium">
-              ایجاد و سفارشی سازی کنید. ساده کنید و ذخیره کنید. با خدمات چاپ سه
-              بعدی موانع طراحی را از بین ببرید و کسب و کار خود را افزایش دهید.
+              {t("SliderExplain.messsage")}
             </p>
-            <Link to="/dashboard/createmodel" className="flex flex-row justify-start">
-              <Button className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 ">
-                <span className="font-bold text-sm">
-                  هر آنچه تصور میکنی را خلق کن
-                </span>
-              </Button>
-            </Link>
+            <Button
+              onClick={() => {
+                window.scroll({ top: 600, behavior: "smooth" });
+              }}
+              className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
+            >
+              <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
+            </Button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -62,21 +63,21 @@ function Slider() {
             ></img>
             <div className="bg-darkblue  absolute bottom-0 opacity-30 rounded-b-2xl right-0 left-0 top-0 w-full h-full overflow-hidden"></div>
           </div>
-          <div className="absolute lg:bottom-10 right-4  bottom-5 flex flex-col gap-2">
+          <div className="absolute lg:bottom-10 right-0 left-0 items-center bottom-5 flex flex-col gap-2">
             <h1 className="font-bold text-white text-xl">
-              سرویس پرینت سه بعدی
+               {t("Welcome.messsage")}
             </h1>
             <p className=" text-white text-xs font-medium">
-              ایجاد و سفارشی سازی کنید. ساده کنید و ذخیره کنید. با خدمات چاپ سه
-              بعدی موانع طراحی را از بین ببرید و کسب و کار خود را افزایش دهید.
+              {t("SliderExplain.messsage")}
             </p>
-            <Link to="/dashboard/createmodel" className="flex flex-row justify-start">
-              <Button className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 ">
-                <span className="font-bold text-sm">
-                  هر آنچه تصور میکنی را خلق کن
-                </span>
-              </Button>
-            </Link>
+            <Button
+              onClick={() => {
+                window.scroll({ top: 600, behavior: "smooth" });
+              }}
+              className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
+            >
+              <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
+            </Button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -88,21 +89,21 @@ function Slider() {
             ></img>
             <div className="bg-darkblue  absolute bottom-0 opacity-30 rounded-b-2xl right-0 left-0 top-0 w-full h-full overflow-hidden"></div>
           </div>
-          <div className="absolute lg:bottom-10 right-4  bottom-5 flex flex-col gap-2">
+          <div className="absolute lg:bottom-10 right-0 left-0 items-center bottom-5 flex flex-col gap-2">
             <h1 className="font-bold text-white text-xl">
-              سرویس پرینت سه بعدی
+               {t("Welcome.messsage")}
             </h1>
             <p className=" text-white text-xs font-medium">
-              ایجاد و سفارشی سازی کنید. ساده کنید و ذخیره کنید. با خدمات چاپ سه
-              بعدی موانع طراحی را از بین ببرید و کسب و کار خود را افزایش دهید.
+              {t("SliderExplain.messsage")}
             </p>
-            <Link to="/dashboard/createmodel" className="flex flex-row justify-start">
-              <Button className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 ">
-                <span className="font-bold text-sm">
-                  هر آنچه تصور میکنی را خلق کن
-                </span>
-              </Button>
-            </Link>
+            <Button
+              onClick={() => {
+                window.scroll({ top: 600, behavior: "smooth" });
+              }}
+              className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
+            >
+              <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
+            </Button>
           </div>
         </SwiperSlide>
       </Swiper>

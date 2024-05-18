@@ -57,5 +57,23 @@
   },
   "yourlist": {
     "messsage": "Your List"
+  },
+  "Welcome": {
+    "messsage": "Welcome"
+  },
+  "SliderExplain": {
+    "messsage": "This project has been implemented for Cando school."
+  },
+  "GoGames": {
+    "messsage": "Let's go to the games"
+  },
+  "SignUp": {
+    "messsage": "Sign Up"
+  },
+  "SignIn": {
+    "messsage": "Sign In"
+  },
+  "Cando": {
+    "messsage": "Cando"
   }
 }

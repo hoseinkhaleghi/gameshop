@@ -1,28 +1,60 @@
-import Input from "../../common/input/Input";
 import { list } from "../../../list";
+// import { useState } from "react";
+import RangeSlider from "./RangeSlider";
+import SearchInput from "./SearchInput";
+import { useDarkMode } from "../../../GlobalStates/ThemeProvider";
+import { MdOutlineContentPasteSearch } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 function SearchBar() {
-  const Years = list.map((item) => item.Year);
-  const Year = [...new Set(Years)].sort();
-
+  // const Years = list.map((item) => item.Year);
+  // const Year = [...new Set(Years)].sort();
+  // const MinYear = Math.min(...Years);
+  // const MaxYear = Math.max(...Years);
+  // console.log("big:" + MaxYear + "min" + MinYear);
+  // const [currentyear , setCurrentyear] = useState("")
   const Companies = list.map((item) => item.company);
   const Company = [...new Set(Companies)].sort();
+  const genres = list.map((item) => item.genre);
+  const genre = [...new Set(genres)].sort();
+  const { isDarkMode } = useDarkMode();
+  const { i18n } = useTranslation("global");
 
+  // const getyaer = (e)=> setCurrentyear(e.target.value)
   return (
     <>
-      <section className="bg-gray-500 flex flex-row rounded-md  m-5">
-        <div className="w-20">
+      <section
+        className={
+          isDarkMode
+            ? "text-white bg-gray-800  flex flex-row rounded-md  m-5"
+            : "text-black bg-stone-50 border-2 flex flex-row rounded-md  m-5"
+        }
+      >
+        <div
+          className={
+            i18n.language == "en"
+              ? isDarkMode
+                ? "text-white bg-gray-900 p-10 flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md "
+                : "text-black bg-stone-200 p-10  flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md  "
+              : isDarkMode
+                ? "text-white bg-gray-900 p-10 flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md "
+                : "text-black bg-stone-200 p-10  flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md  "
+          }
+        >
           <p>جستجو</p>
+          <div className="text-red-400 text-5xl ">
+            <MdOutlineContentPasteSearch />
+          </div>
         </div>
         <div className="w-full flex flex-col p-10">
-          <Input placeholder="search" className="" />
+          <SearchInput />
           <div className="flex flex-row w-full gap-10 mt-6">
-            <label htmlFor="year">سال ساخت</label>
+            {/* <label htmlFor="year">سال ساخت</label>
             <select name="year" id="year" className="w-72 text-black ">
               {Year.map((item, index) => (
                 <option key={index}>{item}</option>
               ))}
-            </select>
+            </select> */}
 
             <label htmlFor="company">سازنده</label>
             <select name="company" id="company" className="w-72 text-black">
@@ -30,18 +62,15 @@ function SearchBar() {
                 <option key={index}>{item}</option>
               ))}
             </select>
-
-            <label htmlFor="company">سازنده</label>
-            <select name="year" id="year" className="w-72 text-black">
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-              <option value="2020">2020</option>
-              <option value="2019">2019</option>
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
+            <label htmlFor="genre">ژانر</label>
+            <select name="genre" id="genre" className="w-72 text-black">
+              {genre.map((item, index) => (
+                <option key={index}>{item}</option>
+              ))}
             </select>
+
+            <label htmlFor="Year">سال ساخت</label>
+            <RangeSlider />
           </div>
         </div>
       </section>

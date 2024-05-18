@@ -9,7 +9,7 @@ function App() {
   return (
     <div
       dir={i18n.language == "en" ? "ltr" : "rtl"}
-      className={isDarkMode ? "text-white bg-darkblue z-50" : "bg-white  "}
+      className={isDarkMode ? "text-white bg-darkblue z-50 w-full h-full" : "bg-white  "}
     >
       <Router />
     </div>
