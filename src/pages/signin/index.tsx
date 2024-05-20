@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string } from "yup";
 import { phone_or_email_regex } from "../../models/regex";
-import Button from "../../components/common/Button/Button";
+import button from "../../components/common/button/button";
 import Logo from "../../assets/logo";
 import Input from "../../components/common/input/Input";
 import { useState } from "react";
@@ -92,9 +92,9 @@ export default function Signin() {
           <p className="text-red-500 text-xs">{errors.password.message}</p>
         ) : null}
 
-        <Button type="submit" loading={isLoading} className="mt-5">
+        <button type="submit" loading={isLoading} className="mt-5">
           ورود به حساب کاربری
-        </Button>
+        </button>
       </form>
       <h3 className="mt-10 text-center">
         تاکنون ثبت نام نکرده اید؟
