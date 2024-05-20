@@ -172,7 +172,6 @@ export default function SearchInput() {
   // }, [datalist]);
   // console.log(data);
 
-
   const {
     getRootProps,
     getInputLabelProps,
@@ -184,55 +183,58 @@ export default function SearchInput() {
     value,
     focused,
     setAnchorEl,
+    
   } = useAutocomplete({
     id: "customized-hook-demo",
     // defaultValue: [list[0]],
     multiple: true,
     options: list,
-    getOptionLabel: (option) => option.name,
+    // getOptionLabel: option,
   });
-//   const [data, setData] = React.useState({});
-//   React.useEffect(() => {
-//     setDatalist(value);
-//   }, [data]);
-// if (value.length != 0) {
-//     setDatalist(value);
-//   } 
-if (value.length === 0) {
-  setDatalist(list);
-} else {
-  setDatalist(value);
-}
+  //   const [data, setData] = React.useState({});
+  //   React.useEffect(() => {
+  //     setDatalist(value);
+  //   }, [data]);
+  // if (value.length != 0) {
+  //     setDatalist(value);
+  //   }
+  if (value.length === 0) {
+    setDatalist(list);
+  } else {
+    setDatalist(value);
+  }
 
-    // React.useEffect(() => {
-    //   if (value.length === 0) {
-    //       setDatalist(datalist);
-    //     } else {
-    //       setDatalist(value);
-    //     }
-    //     }, [datalist]);
+  // React.useEffect(() => {
+  //   if (value.length === 0) {
+  //       setDatalist(datalist);
+  //     } else {
+  //       setDatalist(value);
+  //     }
+  //     }, [datalist]);
 
   return (
-    <Root>
-      <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}>Customized hook</Label>
-        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
-          {value.map((option, index) => (
-            <StyledTag label={option.name} {...getTagProps({ index })} />
-          ))}
-          <input {...getInputProps()} placeholder="search ..." />
-        </InputWrapper>
-      </div>
-      {groupedOptions.length > 0 ? (
-        <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
-              <span>{option.name}</span>
-              <CheckIcon fontSize="small" />
-            </li>
-          ))}
-        </Listbox>
-      ) : null}
-    </Root>
+    <>
+      <Root>
+        <div {...getRootProps()}>
+          <Label {...getInputLabelProps()}>Customized hook</Label>
+          <InputWrapper className={focused ? "focused" : ""}>
+            {value.map((option, index) => (
+              <StyledTag label={option.name} {...getTagProps({ index })} />
+            ))}
+            <input {...getInputProps()} placeholder="search ..." />
+          </InputWrapper>
+        </div>
+        {groupedOptions.length > 0 ? (
+          <Listbox {...getListboxProps()}>
+            {groupedOptions.map((option, index) => (
+              <li {...getOptionProps({ option, index })}>
+                <span>{option.name}</span>
+                <CheckIcon fontSize="small" />
+              </li>
+            ))}
+          </Listbox>
+        ) : null}
+      </Root>
+    </>
   );
 }
