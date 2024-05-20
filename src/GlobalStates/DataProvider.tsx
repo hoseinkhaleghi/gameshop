@@ -5,34 +5,52 @@ export const DataContext = createContext(undefined);
 
 export function DataProvider({ children }: PropsWithChildren) {
   const [datalist, setDatalist] = useState([]);
-  const [favoriteList, setFavoriteList] = useState([]);
-  useEffect(() => {
-    // Set datalist here
-    setDatalist(list);
-  }, []);
-  const handleFavorite = (id) => {
-    // Check if the item is already in favoriteList
-    const index = favoriteList.findIndex((item) => item.id === id);
-    if (index !== -1) {
-      // Item exists, remove it from favoriteList
-      const updatedList = [...favoriteList];
-      updatedList.splice(index, 1);
-      setFavoriteList(updatedList);
-    } else {
-      // Item does not exist, add it to favoriteList
-      const item = datalist.find((item) => item.id === id);
-      setFavoriteList([...favoriteList, item]);
-    }
-  };
-  console.log(favoriteList);
+  const [favoritelist, setFavoritelist] = useState([]);
+  // useEffect(() => {
+  //   setDatalist(list);
+  //   const storeFavorite = window.localStorage.getItem("My Favorite");
+    
+  //   setFavoritelist(JSON.parse((storeFavorite))
+  // );
+  // }, []);
+
+  // useEffect(() => {
+  //   setDatalist(list);
+  //   window.localStorage.setItem("My Favorite", JSON.stringify(favoritelist));
+  // }, [favoritelist]);
+
+  const favorite = [...new Set(favoritelist)].sort();
+  function handleFavorite(id) {
+    const includes = favoritelist.some((item) => item.id == id);
+    const favoriteitem = datalist.find((item) => item.id == id);
+    if (includes)
+      return setFavoritelist((favoritelist) =>
+        favoritelist.filter((item) => item.id !== id)
+      );
+    setFavoritelist((favoritelist) => [...favoritelist, favoriteitem]);
+  }
+
+  const [platform, setPlatform] = useState("ps5");
+  function handlePlatform(icon) {
+    const includes = favorite.some((item) => item.icon == icon);
+    const platformitem = datalist.find((item) => item.icon == icon);
+    if (includes)
+      return setFavoritelist((favoritelist) =>
+        favoritelist.filter((item) => item.id !== id)
+      );
+    setFavoritelist((favoritelist) => [...favoritelist, platformitem]);
+  }
+
 
   return (
     <DataContext.Provider
       value={{
         datalist,
         setDatalist,
-        setFavoriteList,
+        favorite,
+        setFavoritelist,
         handleFavorite,
+        handlePlatform
       }}
     >
       {children}

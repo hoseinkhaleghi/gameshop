@@ -18,11 +18,11 @@ export default function RangeSlider() {
   };
 //   console.log(value)
   return (
-    <Box sx={{ width: 200 }}>
+    <Box  sx={{ width: 200 }}>
       <Slider
         min={MinYear}
         step={1}
-        max={MaxYear}      
+        max={MaxYear}
         getAriaLabel={() => 'Temperature range'}
         value={value}
         onChange={handleChange}

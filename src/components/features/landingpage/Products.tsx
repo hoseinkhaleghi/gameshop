@@ -7,7 +7,7 @@ import { DataContext } from "../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
 
 function Products() {
-  const { favoriteList, handleFavorite, datalist } = useContext(DataContext);
+  const { datalist, handleFavorite } = useContext(DataContext);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
   const [platform, setPlatform] = useState("ps5");
@@ -18,9 +18,7 @@ function Products() {
         // <form key={item.id} action="" onSubmit={(e) => e.preventDefault()}>
         <div
           key={item.id}
-          className={
-            isDarkMode ? "text-black bg-white " : "text-white bg-black"
-          }
+          className={isDarkMode ? "text-black bg-white " : "text-white bg-black"}
         >
           <div className={styles.card}>
             <div className={styles.imgBx}>
@@ -42,8 +40,12 @@ function Products() {
             >
               <div className="flex flex-row justify-between">
                 <h3 className="text-wrap">{item.name}</h3>
-                <button onClick={() => handleFavorite(item.id)}>
-                  {favoriteList.some((favItem) => favItem.id === item.id) ? (
+                <button
+                  onClick={() => {
+                    handleFavorite(item.id);
+                  }}
+                >
+                  {item.favorite === true ? (
                     <div className="text-yellow-500">
                       <MdOutlineFavorite />
                     </div>
@@ -57,7 +59,7 @@ function Products() {
               <h1 className="text-wrap">{item.story}</h1>
               {/* <h4>{item.email}</h4> */}
               <div className={styles.size}>
-                {/* <button
+                <button
                   value={"pc"}
                   onClick={(item) => console.log(item.target.value)}
                 >
@@ -77,7 +79,7 @@ function Products() {
                 >
                   {item.platform.ps5.icon}
                   {item.platform.ps5.title}
-                </button> */}
+                </button>
               </div>
               <button
                 value="xbox"

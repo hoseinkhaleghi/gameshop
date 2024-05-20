@@ -26,7 +26,7 @@ function SearchBar() {
       <section
         className={
           isDarkMode
-            ? "text-white bg-gray-800  flex flex-row rounded-md  m-5"
+            ? "text-white bg-gray-800  flex flex-row rounded-md m-5"
             : "text-black bg-stone-50 border-2 flex flex-row rounded-md  m-5"
         }
       >
@@ -34,27 +34,21 @@ function SearchBar() {
           className={
             i18n.language == "en"
               ? isDarkMode
-                ? "text-white bg-gray-900 p-10 flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md "
-                : "text-black bg-stone-200 p-10  flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md  "
+                ? "text-white bg-gray-900 p-10 lg:flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md hidden "
+                : "text-black bg-stone-200 p-10  lg:flex flex-col rounded-br-full gap-4 justify-center items-center rounded-md hidden "
               : isDarkMode
-                ? "text-white bg-gray-900 p-10 flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md "
-                : "text-black bg-stone-200 p-10  flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md  "
+                ? "text-white bg-gray-900 p-10 lg:flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md hidden  "
+                : "text-black bg-stone-200 p-10   lg:flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md hidden  "
           }
         >
           <p>جستجو</p>
-          <div className="text-red-400 text-5xl ">
+          <div className="text-red-400 text-5xl  ">
             <MdOutlineContentPasteSearch />
           </div>
         </div>
-        <div className="w-full flex flex-col p-10">
+        <div className="w-11/12 md:w-11/12 flex flex-col p-10">
           <SearchInput />
-          <div className="flex flex-row w-full gap-10 mt-6">
-            {/* <label htmlFor="year">سال ساخت</label>
-            <select name="year" id="year" className="w-72 text-black ">
-              {Year.map((item, index) => (
-                <option key={index}>{item}</option>
-              ))}
-            </select> */}
+          <div className="flex flex-col md:flex-row w-full gap-10 mt-6">
 
             <label htmlFor="company">سازنده</label>
             <select name="company" id="company" className="w-72 text-black">
@@ -70,7 +64,10 @@ function SearchBar() {
             </select>
 
             <label htmlFor="Year">سال ساخت</label>
+            <div>
             <RangeSlider />
+
+            </div>
           </div>
         </div>
       </section>
