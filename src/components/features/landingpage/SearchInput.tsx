@@ -5,7 +5,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
-import { DataContext } from "../../../GlobalStates/DataProvider";
+// import { DataContext } from "../../../GlobalStates/DataProvider";
 import { list } from "../../../list";
 
 const Root = styled("div")(
@@ -160,18 +160,17 @@ const Listbox = styled("ul")(
 `
 );
 
-export default function SearchInput() {
+export default function SearchInput({ finalinput, setFinalinput }) {
   //   const [searchlist, setSearchlist] = React.useState([]);
   // const [data, setData] = React.useState([]);
   //   React.useEffect(() => {
   //     setSearchlist(list);
   //   }, [list]);
-  const { datalist, setDatalist } = React.useContext(DataContext);
+  // const { datalist, setDatalist } = React.useContext(DataContext);
   // React.useEffect(() => {
   //   setData(datalist);
   // }, [datalist]);
   // console.log(data);
-
 
   const {
     getRootProps,
@@ -191,26 +190,23 @@ export default function SearchInput() {
     options: list,
     getOptionLabel: (option) => option.name,
   });
-//   const [data, setData] = React.useState({});
-//   React.useEffect(() => {
-//     setDatalist(value);
-//   }, [data]);
-// if (value.length != 0) {
-//     setDatalist(value);
-//   } 
-if (value.length === 0) {
-  setDatalist(list);
-} else {
-  setDatalist(value);
-}
+  //   const [data, setData] = React.useState({});
+  //   React.useEffect(() => {
+  //     setDatalist(value);
+  //   }, [data]);
+  // if (value.length != 0) {
+  //     setDatalist(value);
+  //   }
+  // if (value.length === 0) {
+  //   setDatalist(list);
+  // } else {
+  //   setDatalist(value);
+  // }
+  // setFinalinput(value);
 
-    // React.useEffect(() => {
-    //   if (value.length === 0) {
-    //       setDatalist(datalist);
-    //     } else {
-    //       setDatalist(value);
-    //     }
-    //     }, [datalist]);
+  React.useEffect(() => {
+    setFinalinput(value);
+  }, [value]);
 
   return (
     <Root>

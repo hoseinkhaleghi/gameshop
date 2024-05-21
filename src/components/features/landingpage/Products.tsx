@@ -10,7 +10,12 @@ function Products() {
   const { datalist, handleFavorite } = useContext(DataContext);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
-  const [platform, setPlatform] = useState("ps5");
+  // const [platform, setPlatform] = useState("ps5");
+
+  const platform = datalist.map((item)=>item.platform)
+  // console.log(platform)
+  const x = platform.map((item)=>item.pc)
+  // console.log(x)
 
   return (
     <div className={styles.cont}>
@@ -56,10 +61,12 @@ function Products() {
                   )}
                 </button>
               </div>
-              <h1 className="text-wrap">{item.story}</h1>
+              <h1 className="text-wrap hidden lg:flex">{item.story}</h1>
               {/* <h4>{item.email}</h4> */}
               <div className={styles.size}>
-                <button
+                {/* {datalist.map((item)=>(<button value={item.platform.pc.name}>{item.platform.xbox.icon}</button>))} */}
+
+                {/* <button
                   value={"pc"}
                   onClick={(item) => console.log(item.target.value)}
                 >
@@ -79,17 +86,14 @@ function Products() {
                 >
                   {item.platform.ps5.icon}
                   {item.platform.ps5.title}
-                </button>
+                </button> */}
               </div>
               <button
                 value="xbox"
                 onClick={(item) => console.log(item.target.value)}
-                className="bg-white text-black rounded-md"
+                className="bg-white  text-black rounded-md"
               >
                 Buy
-              </button>
-              <button value="xbox" onClick={(item) => console.log(item.target)}>
-                ada
               </button>
             </div>
           </div>
