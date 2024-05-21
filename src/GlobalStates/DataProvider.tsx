@@ -30,18 +30,21 @@ export function DataProvider({ children }: PropsWithChildren) {
       );
     setFavoritelist((favoritelist) => [...favoritelist, favoriteitem]);
   }
-  useEffect(()=>{},[])
+  console.log(favoritelist)
+  // useEffect(()=>{},[])
 
   const [platform, setPlatform] = useState("ps5");
   const [finalsearch, setFinalsearch] = useState([]);
-  function handlePlatform(icon) {
-    const includes = favorite.some((item) => item.icon == icon);
-    const platformitem = datalist.find((item) => item.icon == icon);
-    if (includes)
-      return setFavoritelist((favoritelist) =>
-        favoritelist.filter((item) => item.id !== id)
-      );
-    setFavoritelist((favoritelist) => [...favoritelist, platformitem]);
+  function handlePlatform(id) {
+    const platformvalue = id.target.value
+    // const includes = favorite.some((item) => item.id == id);
+    // const platformitem = datalist.find((item) => item.id == id);
+    // if (includes)
+    //   return setFavoritelist((favoritelist) =>
+    //     favoritelist.filter((item) => item.id !== id)
+    //   );
+    setPlatform(platformvalue);
+    console.log(platform);
   }
 
 
@@ -55,7 +58,10 @@ export function DataProvider({ children }: PropsWithChildren) {
         handleFavorite,
         handlePlatform,
         setFinalsearch,
-        finalsearch
+        finalsearch,
+        favoritelist,
+        platform,
+        
       }}
     >
       {children}

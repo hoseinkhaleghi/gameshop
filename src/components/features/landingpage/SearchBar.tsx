@@ -38,8 +38,8 @@ if (finalsearch.length === 0) {
 }else if (finalsearch.length !== 0){
   setDatalist(finalsearch)
 }
-  console.log(finalinput);
-  console.log(finalrange);
+  // console.log(finalinput);
+  // console.log(finalrange);
 
   // const getyaer = (e)=> setCurrentyear(e.target.value)
   return (

@@ -22,12 +22,11 @@ export const list = [
     Year: 2022,
     imgpc: eldenxpc,
     genre: "Role-playing game",
-    platform: [],
-    // {
-    //   pc: {icon :<GrPersonalComputer /> , title : "pc"},
-    //   xbox: {icon : <FaXbox /> , title : "xbox"},
-    //   ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
-    // },
+    platform: {
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
+    },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
   },
@@ -42,9 +41,9 @@ export const list = [
     imgpc: eldenxpc,
     genre: "Hack and Slash",
     platform: {
-      pc: {icon :<GrPersonalComputer /> , title : "pc"},
-      xbox: {icon : <FaXbox /> , title : "xbox"},
-      ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
     },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
@@ -60,9 +59,9 @@ export const list = [
     imgpc: eldenxpc,
     genre: "Drive",
     platform: {
-      pc: {icon :<GrPersonalComputer /> , title : "pc"},
-      xbox: {icon : <FaXbox /> , title : "xbox"},
-      ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
     },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
@@ -78,9 +77,9 @@ export const list = [
     imgpc: eldenxpc,
     genre: "Open World",
     platform: {
-      pc: {icon :<GrPersonalComputer /> , title : "pc"},
-      xbox: {icon : <FaXbox /> , title : "xbox"},
-      ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
     },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
@@ -96,9 +95,9 @@ export const list = [
     imgpc: eldenxpc,
     genre: "Advanture",
     platform: {
-      pc: {icon :<GrPersonalComputer /> , title : "pc"},
-      xbox: {icon : <FaXbox /> , title : "xbox"},
-      ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
     },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
@@ -114,9 +113,9 @@ export const list = [
     imgpc: eldenxpc,
     genre: "Role-playing game",
     platform: {
-      pc: {icon :<GrPersonalComputer /> , title : "pc"},
-      xbox: {icon : <FaXbox /> , title : "xbox"},
-      ps5: {icon :<SiPlaystation5 /> , title: "ps5"},
+      pc: { icon: <GrPersonalComputer />, title: "pc" },
+      xbox: { icon: <FaXbox />, title: "xbox" },
+      ps5: { icon: <SiPlaystation5 />, title: "ps5" },
     },
     story:
       "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",

@@ -7,12 +7,12 @@ import { DataContext } from "../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
 
 function Products() {
-  const { datalist, handleFavorite } = useContext(DataContext);
+  const { datalist, handleFavorite,favoritelist,handlePlatform,platform } = useContext(DataContext);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
   // const [platform, setPlatform] = useState("ps5");
 
-  const platform = datalist.map((item)=>item.platform)
+  const platforme = datalist.map((item)=>item.platform)
 
 
   return (
@@ -48,7 +48,7 @@ function Products() {
                     handleFavorite(item.id);
                   }}
                 >
-                  {item.favorite === true ? (
+                  {favoritelist.some(favItem => favItem.id === item.id) ? (
                     <div className="text-yellow-500">
                       <MdOutlineFavorite />
                     </div>
@@ -64,30 +64,29 @@ function Products() {
               <div className={styles.size}>
                 {/* {datalist.map((item)=>(<button value={item.platform.pc.name}>{item.platform.xbox.icon}</button>))} */}
 
-                {/* <button
+                <button
                   value={"pc"}
-                  onClick={(item) => console.log(item.target.value)}
+                  onClick={handlePlatform}
                 >
                   {item.platform.pc.icon}
                   {item.platform.pc.title}
                 </button>
                 <button
                   value="xbox"
-                  onClick={(item) => console.log(item.target.value)}
+                  onClick={handlePlatform}
                 >
                   {item.platform.xbox.icon}
                   {item.platform.xbox.title}
                 </button>
                 <button
                   value={"ps5"}
-                  onClick={(item) => console.log(item.target.value)}
+                  onClick={handlePlatform}
                 >
                   {item.platform.ps5.icon}
                   {item.platform.ps5.title}
-                </button> */}
+                </button>
               </div>
               <button
-                value="xbox"
                 onClick={(item) => console.log(item.target.value)}
                 className="bg-white  text-black rounded-md"
               >

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { GrFavorite } from "react-icons/gr";
 
 function Favorite() {
-  const { datalist, favorite, handleFavorite ,favoritelist } =
+  const { favorite, handleFavorite ,favoritelist } =
     useContext(DataContext);
   const { t } = useTranslation("global");
   // function handleFavorite(id) {
@@ -52,7 +52,7 @@ function Favorite() {
                     handleFavorite(item.id);
                   }}
                   >
-                    {item.id === true ? (
+                    {favoritelist.some(favItem => favItem.id === item.id) ? (
                       <div className="text-yellow-500">
                         <MdOutlineFavorite />
                       </div>
