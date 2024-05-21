@@ -6,6 +6,7 @@ export const DataContext = createContext(undefined);
 export function DataProvider({ children }: PropsWithChildren) {
   const [datalist, setDatalist] = useState([]);
   const [favoritelist, setFavoritelist] = useState([]);
+  useEffect(()=>{setDatalist(list)},[])
   // useEffect(() => {
   //   setDatalist(list);
   //   const storeFavorite = window.localStorage.getItem("My Favorite");
@@ -29,8 +30,10 @@ export function DataProvider({ children }: PropsWithChildren) {
       );
     setFavoritelist((favoritelist) => [...favoritelist, favoriteitem]);
   }
+  useEffect(()=>{},[])
 
   const [platform, setPlatform] = useState("ps5");
+  const [finalsearch, setFinalsearch] = useState([]);
   function handlePlatform(icon) {
     const includes = favorite.some((item) => item.icon == icon);
     const platformitem = datalist.find((item) => item.icon == icon);
@@ -50,7 +53,9 @@ export function DataProvider({ children }: PropsWithChildren) {
         favorite,
         setFavoritelist,
         handleFavorite,
-        handlePlatform
+        handlePlatform,
+        setFinalsearch,
+        finalsearch
       }}
     >
       {children}

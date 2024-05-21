@@ -13,9 +13,7 @@ function Products() {
   // const [platform, setPlatform] = useState("ps5");
 
   const platform = datalist.map((item)=>item.platform)
-  console.log(platform)
-  const x = platform.map((item)=>item.pc)
-  console.log(x)
+
 
   return (
     <div className={styles.cont}>

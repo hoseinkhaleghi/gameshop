@@ -1,4 +1,4 @@
-import Button from '../../components/common/Button/Button';
+// import button from '../../components/common/button/button';
 import Input from '../../components/common/input/Input';
 
 function Settings() {
@@ -16,7 +16,7 @@ function Settings() {
         <Input></Input>
         <p className="text-base">کد پستی شما</p>
         <Input></Input>
-        <Button>ذخیره تغییرات</Button>
+        <button>ذخیره تغییرات</button>
       </section>
     </div>
   );

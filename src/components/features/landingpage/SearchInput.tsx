@@ -5,7 +5,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
-import { DataContext } from "../../../GlobalStates/DataProvider";
+// import { DataContext } from "../../../GlobalStates/DataProvider";
 import { list } from "../../../list";
 
 const Root = styled("div")(
@@ -160,13 +160,13 @@ const Listbox = styled("ul")(
 `
 );
 
-export default function SearchInput() {
+export default function SearchInput({ finalinput, setFinalinput }) {
   //   const [searchlist, setSearchlist] = React.useState([]);
   // const [data, setData] = React.useState([]);
   //   React.useEffect(() => {
   //     setSearchlist(list);
   //   }, [list]);
-  const { datalist, setDatalist } = React.useContext(DataContext);
+  // const { datalist, setDatalist } = React.useContext(DataContext);
   // React.useEffect(() => {
   //   setData(datalist);
   // }, [datalist]);
@@ -183,13 +183,12 @@ export default function SearchInput() {
     value,
     focused,
     setAnchorEl,
-    
   } = useAutocomplete({
     id: "customized-hook-demo",
     // defaultValue: [list[0]],
     multiple: true,
     options: list,
-    // getOptionLabel: option,
+    getOptionLabel: (option) => option.name,
   });
   //   const [data, setData] = React.useState({});
   //   React.useEffect(() => {
@@ -198,43 +197,38 @@ export default function SearchInput() {
   // if (value.length != 0) {
   //     setDatalist(value);
   //   }
-  if (value.length === 0) {
-    setDatalist(list);
-  } else {
-    setDatalist(value);
-  }
+  // if (value.length === 0) {
+  //   setDatalist(list);
+  // } else {
+  //   setDatalist(value);
+  // }
+  // setFinalinput(value);
 
-  // React.useEffect(() => {
-  //   if (value.length === 0) {
-  //       setDatalist(datalist);
-  //     } else {
-  //       setDatalist(value);
-  //     }
-  //     }, [datalist]);
+  React.useEffect(() => {
+    setFinalinput(value);
+  }, [value]);
 
   return (
-    <>
-      <Root>
-        <div {...getRootProps()}>
-          <Label {...getInputLabelProps()}>Customized hook</Label>
-          <InputWrapper className={focused ? "focused" : ""}>
-            {value.map((option, index) => (
-              <StyledTag label={option.name} {...getTagProps({ index })} />
-            ))}
-            <input {...getInputProps()} placeholder="search ..." />
-          </InputWrapper>
-        </div>
-        {groupedOptions.length > 0 ? (
-          <Listbox {...getListboxProps()}>
-            {groupedOptions.map((option, index) => (
-              <li {...getOptionProps({ option, index })}>
-                <span>{option.name}</span>
-                <CheckIcon fontSize="small" />
-              </li>
-            ))}
-          </Listbox>
-        ) : null}
-      </Root>
-    </>
+    <Root>
+      <div {...getRootProps()}>
+        <Label {...getInputLabelProps()}>Customized hook</Label>
+        <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
+          {value.map((option, index) => (
+            <StyledTag label={option.name} {...getTagProps({ index })} />
+          ))}
+          <input {...getInputProps()} placeholder="search ..." />
+        </InputWrapper>
+      </div>
+      {groupedOptions.length > 0 ? (
+        <Listbox {...getListboxProps()}>
+          {groupedOptions.map((option, index) => (
+            <li {...getOptionProps({ option, index })}>
+              <span>{option.name}</span>
+              <CheckIcon fontSize="small" />
+            </li>
+          ))}
+        </Listbox>
+      ) : null}
+    </Root>
   );
 }

@@ -1,7 +1,7 @@
 import headerpic from "../../../assets/images/witcher.jpg";
 import headerpic2 from "../../../assets/images/elden2.jpeg";
 import headerpic3 from "../../../assets/images/TLOU2.jpg";
-import Button from "../../common/Button/Button";
+// import button from "../../common/button/button.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -44,14 +44,14 @@ function Slider() {
             <p className=" text-white text-xs font-medium">
               {t("SliderExplain.messsage")}
             </p>
-            <Button
+            <button
               onClick={() => {
                 window.scroll({ top: 600, behavior: "smooth" });
               }}
               className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
             >
               <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
-            </Button>
+            </button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -70,14 +70,14 @@ function Slider() {
             <p className=" text-white text-xs font-medium">
               {t("SliderExplain.messsage")}
             </p>
-            <Button
+            <button
               onClick={() => {
                 window.scroll({ top: 600, behavior: "smooth" });
               }}
               className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
             >
               <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
-            </Button>
+            </button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -96,14 +96,14 @@ function Slider() {
             <p className=" text-white text-xs font-medium">
               {t("SliderExplain.messsage")}
             </p>
-            <Button
+            <button
               onClick={() => {
                 window.scroll({ top: 600, behavior: "smooth" });
               }}
               className=" rounded-xl bg-red-700 text-xs font-bold h-10 w-72 "
             >
               <span className="font-bold text-sm">{t("GoGames.messsage")} </span>
-            </Button>
+            </button>
           </div>
         </SwiperSlide>
       </Swiper>

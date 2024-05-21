@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
-import Button from "../../../common/Button/Button";
+import button from "../../../common/button/button";
 import Header from "../../landingpage/Header";
 interface Props {
   onSubmit: (data: number) => void;
@@ -39,9 +39,9 @@ export default function SectionTwo({ onSubmit, isLoading }: Props) {
             renderInput={(props) => <input {...props} />}
           />
         </div>
-        <Button type="submit" className="mt-20" loading={isLoading}>
+        <button type="submit" className="mt-20" loading={isLoading}>
           ساخت اکانت
-        </Button>
+        </button>
       </form>
     </>
   );

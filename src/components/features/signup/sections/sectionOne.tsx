@@ -1,7 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import Logo from "../../../../assets/logo";
 import Input from "../../../common/input/Input";
-import Button from "../../../common/Button/Button";
+import button from "../../../common/button/button";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -94,9 +94,9 @@ export default function SectionOne({ onSubmit, isLoading }: Props) {
             {errors.passwordConfirm.message}
           </p>
         ) : null}
-        <Button type="submit" loading={isLoading} className="mt-5">
+        <button type="submit" loading={isLoading} className="mt-5">
           ایجاد حساب کاربری
-        </Button>
+        </button>
       </form>
       <h3 className="mt-10 text-center">
         قبلا ثبت نام کرده اید؟
