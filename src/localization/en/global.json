@@ -81,5 +81,41 @@
   },
   "Search": {
     "messsage": "Search ..."
+  },
+  "product": {
+    "messsage": "Products"
+  },
+  "amazing": {
+    "messsage": "Ready for an amazing start?"
+  },
+  "footerexplain": {
+    "messsage": "We are at your service from console sales to main game account services to combined and offline accounts."
+  },
+  "Services": {
+    "messsage": "Services"
+  },
+  "console": {
+    "messsage": "Buy a console"
+  },
+  "Disk": {
+    "messsage": "Buy a game disc"
+  },
+  "gameaccount": {
+    "messsage": "Buy the Original account of the game"
+  },
+  "multigamecombo": {
+    "messsage": "Buy multi-game combo account"
+  },
+  "contactus": {
+    "messsage": "Contact Us"
+  },
+  "forsearch": {
+    "messsage": "The material UI library was used for searching."
+  },
+  "forSignupin": {
+    "messsage": "Help has been taken from Yup and React-hook-form libraries to verify registration and entry."
+  },
+  "forSwiper": {
+    "messsage": "Swiper library is used to run the slider."
   }
 }

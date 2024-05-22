@@ -1,3 +1,4 @@
+import Footer from "../../components/features/landingpage/Footer";
 import Header from "../../components/features/landingpage/Header";
 import Products from "../../components/features/landingpage/Products";
 import SearchBar from "../../components/features/landingpage/SearchBar";
@@ -10,6 +11,7 @@ function Landingpage() {
       <Slider />
       <SearchBar />
       <Products />
+      <Footer />
     </div>
   );
 }

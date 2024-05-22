@@ -81,5 +81,41 @@
   },
   "Search": {
     "messsage": "جستجو..."
+  },
+  "product": {
+    "messsage": "محصولات"
+  },
+  "amazing": {
+    "messsage": "آماده ای برای یک شروع شگفت انگیز؟"
+  },
+  "footerexplain": {
+    "messsage": "از فروش کنسول تا خدمات اکانت های اصلی بازی تا اکانت های ترکیبی و آفلاین درخدمت شما هستیم ."
+  },
+  "Services": {
+    "messsage": "خدمات"
+  },
+  "console": {
+    "messsage": "خرید کنسول"
+  },
+  "Disk": {
+    "messsage": "خرید دیسک بازی"
+  },
+  "gameaccount": {
+    "messsage": "اکانت اصلی بازی را بخرید"
+  },
+  "multigamecombo": {
+    "messsage": "اکانت ترکیبی چند بازی را بخرید"
+  },
+  "contactus": {
+    "messsage": "با ما تماس بگیرید"
+  },
+  "forsearch": {
+    "messsage": "برای جستجو از کتابخانه Material UI کمک گرفته شده است ."
+  },
+  "forSignupin": {
+    "messsage": "برای احراز سنجی ثبت نام و ورود از کتابخانه های Yup و React-hook-form کمک گرفته شده است ."
+  },
+  "forSwiper": {
+    "messsage": "برای اجرای اسلایدر از کتابخانه Swiper استفاده شده است ."
   }
 }

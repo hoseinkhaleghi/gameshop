@@ -13,8 +13,6 @@ function SearchBar() {
 
   // const Years = list.map((item) => item.Year);
   // const Year = [...new Set(Years)].sort();
-  // const MinYear = Math.min(...Years);
-  // const MaxYear = Math.max(...Years);
   // console.log("big:" + MaxYear + "min" + MinYear);
   // const [currentyear , setCurrentyear] = useState("")
   const Companies = list.map((item) => item.company);
@@ -27,33 +25,90 @@ function SearchBar() {
   const [finalinput, setFinalinput] = useState([]);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
+  const MinYear = Math.min(...finalrange);
+  const MaxYear = Math.max(...finalrange);
+  const sortedrange = finalrange.sort((a, b) => a - b);
+  console.log(sortedrange);
   // setFinalsearch(finalinput);
   // setDatalist(finalsearch);
   // useEffect(() => {
   // }, [finalsearch]);
 
-  if (
-    finalinput.length !== 0 &&
-    finalcompany === "all" &&
-    finalgenre === "all"
-  ) {
-    setFinalsearch(finalinput);
-  }
-  else if (finalinput.length === 0 && finalcompany === "all" && finalgenre === "all"){
-    setFinalsearch(finalinput);
-  }
+  useEffect(() => {
+    if (
+      finalinput.length !== 0 &&
+      finalcompany === "all" &&
+      finalgenre === "all"
+    ) {
+      setFinalsearch(finalinput);
+    } else if (
+      finalinput.length === 0 &&
+      finalcompany === "all" &&
+      finalgenre !== "all"
+    ) {
+      setFinalsearch(
+        list.filter((item) => {
+          return (
+            item.genre.includes(finalgenre) &&
+            item.Year >= sortedrange[0] &&
+            item.Year <= sortedrange[1]
+          );
+        })
+      );
+    } else if (
+      finalinput.length === 0 &&
+      finalcompany !== "all" &&
+      finalgenre === "all"
+    ) {
+      setFinalsearch(
+        list.filter((item) => {
+          return (
+            item.company.includes(finalcompany) &&
+            item.Year >= sortedrange[0] &&
+            item.Year <= sortedrange[1]
+          );
+        })
+      );
+    } else if (
+      finalinput.length === 0 &&
+      finalcompany !== "all" &&
+      finalgenre !== "all"
+    ) {
+      setFinalsearch(
+        list.filter((item) => {
+          return (
+            item.company.includes(finalcompany) &&
+            item.genre.includes(finalgenre) &&
+            item.Year >= sortedrange[0] &&
+            item.Year <= sortedrange[1]
+          );
+        })
+      );
+    } else if (
+      finalinput.length === 0 &&
+      finalcompany === "all" &&
+      finalgenre === "all"
+    ) {
+      setFinalsearch(
+        list.filter((item) => {
+          return item.Year >= sortedrange[0] && item.Year <= sortedrange[1];
+        })
+      );
+    }
+  }, [finalinput, finalcompany, finalgenre, MinYear, MaxYear, sortedrange]);
 
+  //----------------------------------------
 
-
-
-  
   if (finalsearch.length === 0) {
     setDatalist(list);
   } else if (finalsearch.length !== 0) {
     setDatalist(finalsearch);
   }
-  // console.log(finalinput);
-  // console.log(finalrange);
+  console.log(finalinput);
+  console.log(finalrange);
+  console.log(finalcompany);
+  console.log(finalgenre);
+  console.log(finalsearch);
 
   // const getyaer = (e)=> setCurrentyear(e.target.value)
   return (

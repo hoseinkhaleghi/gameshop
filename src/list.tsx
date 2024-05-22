@@ -10,6 +10,10 @@ import GTAVIPS5 from "./assets/images/GTAVI/Gta-VI-Ps-cdkeyshareir-1.jpg"
 import TLOU2 from "./assets/images/TLOU2/The-Last-of-Us-Part-II-Remastered-ps-cdkeyshareir-7.jpg"
 import Hellpc from "./assets/images/Hellblade2/Hellblade-Senuas-Sacrifice-pc-cdkeyshareir-1.jpg"
 import HellX from "./assets/images/Hellblade2/Senua-s-Saga-Hellblade-II-xbox-cdkeyshareir-1.jpg"
+import TombPc from "./assets/images/RiseoftheTombRaider/Rise-of-the-Tomb-Raider-pc-cdkeyshareir-1.jpg"
+import TombX from "./assets/images/RiseoftheTombRaider/rise-of-the-tomb-raidr-xbox-13-252x345.jpg"
+import SHTombPc from "./assets/images/ShadowoftheTombRaiderDefinitive Edition/Shadow-of-the-Tomb-Raider-Definitive-Edition-pc-cdkeyshareir-1.jpg"
+import SHTombX from "./assets/images/ShadowoftheTombRaiderDefinitive Edition/shadow-of-the-tomb-raider-xbox-14-252x345.jpg"
 // import { useTranslation } from "react-i18next";
 // import { FaXbox } from "react-icons/fa";
 // import { SiPlaystation5 } from "react-icons/si";
@@ -76,7 +80,7 @@ export const list = [
     email: "Lew@alysha.tv",
     company: "Rock Star",
     defaultImage: GTAVIPS5,
-    Year: 2013,
+    Year: 2025,
     images: {
       PC: GTAVIPC,
       PS5: GTAVIPS5,
@@ -108,7 +112,7 @@ export const list = [
     name: "Senua’s Saga Hellblade II",
     company: "Ninja Theory",
     defaultImage: Hellpc,
-    Year: 2015,
+    Year: 2024,
     images: {
       PC: Hellpc,
       XBOX: HellX,
@@ -117,5 +121,33 @@ export const list = [
     platform: ["PC", "XBOX"],
     story:
       "دنباله برنده جایزه Hellblade: Senua’s Sacrifice، Senua در سفری بی رحمانه برای بقا از طریق اسطوره و عذاب وایکینگ ایسلند بازمی گردد. Senua با هدف نجات کسانی که قربانی وحشت…      ",
+  },{
+    id: 7,
+    name: "Rise of the Tomb Raider",
+    company: "Eidos-Montréal",
+    defaultImage: TombPc,
+    Year: 2015,
+    images: {
+      PC: TombPc,
+      XBOX: TombX,
+    },
+    genre: "Advanture",
+    platform: ["PC", "XBOX"],
+    story:
+      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+  },{
+    id: 8,
+    name: "Shadow of the Tomb Raider",
+    company: "Eidos-Montréal",
+    defaultImage: SHTombPc,
+    Year: 2018,
+    images: {
+      PC: SHTombPc,
+      XBOX: SHTombX,
+    },
+    genre: "Advanture",
+    platform: ["PC", "XBOX"],
+    story:
+      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
   },
 ];

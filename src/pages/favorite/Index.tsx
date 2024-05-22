@@ -6,8 +6,7 @@ import { useTranslation } from "react-i18next";
 import { GrFavorite } from "react-icons/gr";
 
 function Favorite() {
-  const { favorite, handleFavorite ,favoritelist } =
-    useContext(DataContext);
+  const { favorite, handleFavorite, favoritelist,selectedGameImages,handlePlatformClick } = useContext(DataContext);
   const { t } = useTranslation("global");
   // function handleFavorite(id) {
   //   const newFavorites = datalist.map((item) => {
@@ -43,16 +42,20 @@ function Favorite() {
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div>
-                  <img className="max-w-60 max-h-60" src={item.imgps5} alt="" />
+                  <img
+                    className="max-w-60 max-h-60"
+                    src={selectedGameImages[item.id] || item.defaultImage}
+                    alt={item.title}
+                  />
                 </div>
                 <div className="flex flex-row justify-between">
                   <h1>{item.name}</h1>
                   <button
-                  onClick={() => {
-                    handleFavorite(item.id);
-                  }}
+                    onClick={() => {
+                      handleFavorite(item.id);
+                    }}
                   >
-                    {favoritelist.some(favItem => favItem.id === item.id) ? (
+                    {favoritelist.some((favItem) => favItem.id === item.id) ? (
                       <div className="text-yellow-500">
                         <MdOutlineFavorite />
                       </div>
@@ -64,6 +67,18 @@ function Favorite() {
                   </button>
                 </div>
                 <p className="text-wrap max-w-60">{item.story}</p>
+                <div className="flex flex-row gap-3">
+                {item.platform.map((platform) => (
+                  <button
+                  className="border-2 p-4 rounded-md"
+                    key={platform}
+                    onClick={() => handlePlatformClick(item.id, platform)}
+                  >
+                    {platform}
+                  </button>
+                ))}
+              </div>
+
                 <button className="bg-white text-black rounded-md border-2">
                   Buy
                 </button>

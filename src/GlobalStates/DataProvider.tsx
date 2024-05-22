@@ -6,11 +6,13 @@ export const DataContext = createContext(undefined);
 export function DataProvider({ children }: PropsWithChildren) {
   const [datalist, setDatalist] = useState([]);
   const [favoritelist, setFavoritelist] = useState([]);
-  useEffect(()=>{setDatalist(list)},[])
+  useEffect(() => {
+    setDatalist(list);
+  }, []);
   // useEffect(() => {
   //   setDatalist(list);
   //   const storeFavorite = window.localStorage.getItem("My Favorite");
-    
+
   //   setFavoritelist(JSON.parse((storeFavorite))
   // );
   // }, []);
@@ -30,23 +32,20 @@ export function DataProvider({ children }: PropsWithChildren) {
       );
     setFavoritelist((favoritelist) => [...favoritelist, favoriteitem]);
   }
-  console.log(favoritelist)
+  // console.log(favoritelist)
   // useEffect(()=>{},[])
 
   const [platform, setPlatform] = useState("ps5");
   const [finalsearch, setFinalsearch] = useState([]);
-  function handlePlatform(id) {
-    const platformvalue = id.target.value
-    // const includes = favorite.some((item) => item.id == id);
-    // const platformitem = datalist.find((item) => item.id == id);
-    // if (includes)
-    //   return setFavoritelist((favoritelist) =>
-    //     favoritelist.filter((item) => item.id !== id)
-    //   );
-    setPlatform(platformvalue);
-    console.log(platform);
-  }
-
+  const [selectedGameImages, setSelectedGameImages] = useState({});
+  const [selectedPlatform, setSelectedPlatform] = useState(null);
+  const handlePlatformClick = (gameId, platform) => {
+    setSelectedPlatform(platform);
+    setSelectedGameImages((prevImages) => ({
+      ...prevImages,
+      [gameId]: datalist.find((game) => game.id === gameId).images[platform],
+    }));
+  };
 
   return (
     <DataContext.Provider
@@ -56,12 +55,13 @@ export function DataProvider({ children }: PropsWithChildren) {
         favorite,
         setFavoritelist,
         handleFavorite,
-        handlePlatform,
+        handlePlatformClick,
         setFinalsearch,
         finalsearch,
         favoritelist,
         platform,
-        
+        selectedGameImages,
+        setSelectedGameImages,
       }}
     >
       {children}

@@ -5,6 +5,8 @@ import Dashboard from "../pages/Dashboard/Index";
 import Settings from "../pages/settings";
 import Signup from "../pages/signup";
 import Signin from "../pages/signin";
+import Products from "../components/features/landingpage/Products";
+import About from "../pages/About/Index";
 
 export default function Router() {
   return (
@@ -13,10 +15,11 @@ export default function Router() {
         <Route path="/" element={<Landingpage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="favorite" element={<Favorite />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="products" element={<Products />} />
           {/* <Route index element={<Navigate to="createmodel" />}></Route>
         <Route path="createmodel" element={<Createmodel />} />
         <Route path="models" element={<Models />} />

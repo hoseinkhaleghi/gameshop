@@ -32,13 +32,18 @@ export default function Sidebar() {
       title: t("account.messsage"),
       link: "/dashboard/settings",
       icon: <CiUser />,
+    },    {
+      id: 25,
+      title: t("product.messsage"),
+      link: "/dashboard/products",
+      icon: <CiUser />,
     },
   ];
 
   return (
     <>
       <Header />
-      <div className="h-screen border-x-2 fixed sm:pt-20 lg:pt-10">
+      <div className="h-screen border-x-2 border-t-2 fixed sm:pt-20 lg:pt-20">
         <div>پروفایل کاربری</div>
         <ul className={classNames(`lg:w-60  flex flex-col md:px-4 pt-3`)}>
           {menuItems.map((item) => (

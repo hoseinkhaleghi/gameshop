@@ -5,27 +5,52 @@ import styles from "./Products.module.css";
 import { useDarkMode } from "../../../GlobalStates/ThemeProvider";
 import { DataContext } from "../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
+// import { list } from "../../../list";
 
 function Products() {
-  const { datalist, handleFavorite, favoritelist } = useContext(DataContext);
+  const { datalist, handleFavorite, favoritelist,selectedGameImages , handlePlatformClick } = useContext(DataContext);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
-  // const [platform, setPlatform] = useState("ps5");
 
-  // const platforme = datalist.map((item)=>item.platform)
-  const [selectedPlatform, setSelectedPlatform] = useState(null);
-  const [selectedGameImages, setSelectedGameImages] = useState({});
-  const handlePlatformClick = (gameId, platform) => {
-    setSelectedPlatform(platform);
-    setSelectedGameImages((prevImages) => ({
-      ...prevImages,
-      [gameId]: datalist.find((game) => game.id === gameId).images[platform],
-    }));
-  };
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1); 
+  const recordsPerPage = 6;
+  const endIndex = currentPage * recordsPerPage;
+  const startIndex = endIndex - recordsPerPage;
+  const dataForPage = datalist.slice(startIndex, endIndex);
+  const npage = Math.ceil(datalist.length / recordsPerPage);
+  const numbers = [...Array(npage + 1).keys()].slice(1);
+  console.log([startIndex,endIndex,recordsPerPage]);
+  const prevPage = ()=>{
+    if (currentPage !== 1) {
+      setCurrentPage( currentPage - 1)
+      window.scroll({ top: 800, behavior: "smooth" });
+  }}
+  const nextPage = ()=>{
+    if (currentPage !== npage) {
+      setCurrentPage( currentPage + 1)
+      window.scroll({ top: 800, behavior: "smooth" });
+  }}
+  const changePage = (id)=>{
+      setCurrentPage(id)
+      window.scroll({ top: 800, behavior: "smooth" });
+  }
+  //-------------------------------------------
+
+  // const [selectedPlatform, setSelectedPlatform] = useState(null);
+  // const [] = useState({});
+  // const handlePlatformClick = (gameId, platform) => {
+  //   setSelectedPlatform(platform);
+  //   setSelectedGameImages((prevImages) => ({
+  //     ...prevImages,
+  //     [gameId]: datalist.find((game) => game.id === gameId).images[platform],
+  //   }));
+  // };
 
   return (
-    <div className={styles.cont}>
-      {datalist.map((item) => (
+    <>
+        <div className={styles.cont}>
+      {dataForPage.map((item) => (
         <div
           key={item.id}
           className={
@@ -37,7 +62,7 @@ function Products() {
               <img
                 src={selectedGameImages[item.id] || item.defaultImage}
                 alt={item.title}
-              />{" "}
+              />
             </div>
             <div
               className={
@@ -68,7 +93,6 @@ function Products() {
                   <button
                     key={platform}
                     onClick={() => handlePlatformClick(item.id, platform)}
-                    // value={selectedPlatform}
                   >
                     {platform}
                   </button>
@@ -84,22 +108,26 @@ function Products() {
           </div>
         </div>
       ))}
-      {/* {datalist.map((game) => (
-                <div key={game.id}>
-                    <h3>{game.title}</h3>
-                    {game.platform.map((platform) => (
-                        <button key={platform} onClick={() => handlePlatformClick(platform)}>
-                            {platform}
-                        </button>
-                    ))}
-                    <div>
-                        {selectedPlatform && (
-                            <img src={game.images[selectedPlatform]} alt={game.title} />
-                        )}
-                    </div>
-                </div>
-            ))} */}
+
     </div>
+    <nav className="flex flex-row flex-1 w-full items-center justify-center my-16">
+        <ul className="flex flex-row gap-2 ">
+          <li className="border-2 p-4 cursor-pointer" onClick={prevPage}>
+            Prev
+          </li>
+          {numbers.map((number, index) => (
+            <li key={index} className="border-2 p-4 cursor-pointer" onClick={()=>changePage(number)}>
+              {number}
+            </li>
+          ))}
+          <li className="border-2  p-4 cursor-pointer" onClick={nextPage}>
+            Next
+          </li>
+        </ul>
+      </nav>
+
+
+    </>
   );
 }
 
