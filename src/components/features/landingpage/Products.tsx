@@ -7,34 +7,37 @@ import { DataContext } from "../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
 
 function Products() {
-  const { datalist, handleFavorite,favoritelist,handlePlatform,platform } = useContext(DataContext);
+  const { datalist, handleFavorite, favoritelist } = useContext(DataContext);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
   // const [platform, setPlatform] = useState("ps5");
 
-  const platforme = datalist.map((item)=>item.platform)
-
+  // const platforme = datalist.map((item)=>item.platform)
+  const [selectedPlatform, setSelectedPlatform] = useState(null);
+  const [selectedGameImages, setSelectedGameImages] = useState({});
+  const handlePlatformClick = (gameId, platform) => {
+    setSelectedPlatform(platform);
+    setSelectedGameImages((prevImages) => ({
+      ...prevImages,
+      [gameId]: datalist.find((game) => game.id === gameId).images[platform],
+    }));
+  };
 
   return (
     <div className={styles.cont}>
       {datalist.map((item) => (
-        // <form key={item.id} action="" onSubmit={(e) => e.preventDefault()}>
         <div
           key={item.id}
-          className={isDarkMode ? "text-black bg-white " : "text-white bg-black"}
+          className={
+            isDarkMode ? "text-black bg-white " : "text-white bg-black"
+          }
         >
           <div className={styles.card}>
             <div className={styles.imgBx}>
               <img
-                src={
-                  platform === "ps5"
-                    ? item.imgps5
-                    : platform === "xbox"
-                    ? item.imgxbox
-                    : item.imgpc
-                }
-                onClick={(e) => console.log(e)}
-              />
+                src={selectedGameImages[item.id] || item.defaultImage}
+                alt={item.title}
+              />{" "}
             </div>
             <div
               className={
@@ -48,7 +51,7 @@ function Products() {
                     handleFavorite(item.id);
                   }}
                 >
-                  {favoritelist.some(favItem => favItem.id === item.id) ? (
+                  {favoritelist.some((favItem) => favItem.id === item.id) ? (
                     <div className="text-yellow-500">
                       <MdOutlineFavorite />
                     </div>
@@ -60,31 +63,16 @@ function Products() {
                 </button>
               </div>
               <h1 className="text-wrap hidden lg:flex">{item.story}</h1>
-              {/* <h4>{item.email}</h4> */}
               <div className={styles.size}>
-                {/* {datalist.map((item)=>(<button value={item.platform.pc.name}>{item.platform.xbox.icon}</button>))} */}
-
-                <button
-                  value={"pc"}
-                  onClick={handlePlatform}
-                >
-                  {item.platform.pc.icon}
-                  {item.platform.pc.title}
-                </button>
-                <button
-                  value="xbox"
-                  onClick={handlePlatform}
-                >
-                  {item.platform.xbox.icon}
-                  {item.platform.xbox.title}
-                </button>
-                <button
-                  value={"ps5"}
-                  onClick={handlePlatform}
-                >
-                  {item.platform.ps5.icon}
-                  {item.platform.ps5.title}
-                </button>
+                {item.platform.map((platform) => (
+                  <button
+                    key={platform}
+                    onClick={() => handlePlatformClick(item.id, platform)}
+                    // value={selectedPlatform}
+                  >
+                    {platform}
+                  </button>
+                ))}
               </div>
               <button
                 onClick={(item) => console.log(item.target.value)}
@@ -95,8 +83,22 @@ function Products() {
             </div>
           </div>
         </div>
-        // </form>
       ))}
+      {/* {datalist.map((game) => (
+                <div key={game.id}>
+                    <h3>{game.title}</h3>
+                    {game.platform.map((platform) => (
+                        <button key={platform} onClick={() => handlePlatformClick(platform)}>
+                            {platform}
+                        </button>
+                    ))}
+                    <div>
+                        {selectedPlatform && (
+                            <img src={game.images[selectedPlatform]} alt={game.title} />
+                        )}
+                    </div>
+                </div>
+            ))} */}
     </div>
   );
 }

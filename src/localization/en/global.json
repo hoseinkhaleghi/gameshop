@@ -75,5 +75,11 @@
   },
   "Cando": {
     "messsage": "Cando"
+  },
+  "WhichGame": {
+    "messsage": "Which game are you looking for?"
+  },
+  "Search": {
+    "messsage": "Search ..."
   }
 }

@@ -27,17 +27,31 @@ function SearchBar() {
   const [finalinput, setFinalinput] = useState([]);
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
-  setFinalsearch(finalinput);
+  // setFinalsearch(finalinput);
   // setDatalist(finalsearch);
-
   // useEffect(() => {
   // }, [finalsearch]);
-if (finalsearch.length === 0) {
-  setDatalist(list)
+
+  if (
+    finalinput.length !== 0 &&
+    finalcompany === "all" &&
+    finalgenre === "all"
+  ) {
+    setFinalsearch(finalinput);
+  }
+  else if (finalinput.length === 0 && finalcompany === "all" && finalgenre === "all"){
+    setFinalsearch(finalinput);
+  }
+
+
+
+
   
-}else if (finalsearch.length !== 0){
-  setDatalist(finalsearch)
-}
+  if (finalsearch.length === 0) {
+    setDatalist(list);
+  } else if (finalsearch.length !== 0) {
+    setDatalist(finalsearch);
+  }
   // console.log(finalinput);
   // console.log(finalrange);
 

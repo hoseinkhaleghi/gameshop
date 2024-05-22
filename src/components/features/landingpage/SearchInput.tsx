@@ -7,6 +7,7 @@ import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 // import { DataContext } from "../../../GlobalStates/DataProvider";
 import { list } from "../../../list";
+import { useTranslation } from "react-i18next";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -161,6 +162,7 @@ const Listbox = styled("ul")(
 );
 
 export default function SearchInput({ finalinput, setFinalinput }) {
+  const { t } = useTranslation("global");
   //   const [searchlist, setSearchlist] = React.useState([]);
   // const [data, setData] = React.useState([]);
   //   React.useEffect(() => {
@@ -211,12 +213,12 @@ export default function SearchInput({ finalinput, setFinalinput }) {
   return (
     <Root>
       <div {...getRootProps()}>
-        <Label {...getInputLabelProps()}>Customized hook</Label>
+        <Label className="font-bold" {...getInputLabelProps()}>{t("WhichGame.messsage")}</Label>
         <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
           {value.map((option, index) => (
             <StyledTag label={option.name} {...getTagProps({ index })} />
           ))}
-          <input {...getInputProps()} placeholder="search ..." />
+          <input {...getInputProps()} placeholder={t("Search.messsage")} />
         </InputWrapper>
       </div>
       {groupedOptions.length > 0 ? (
