@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 // import { DataContext } from "../../../GlobalStates/DataProvider";
-import { list } from "../../../list";
+import { list } from "../../../../list";
 import { useTranslation } from "react-i18next";
 
 const Root = styled("div")(

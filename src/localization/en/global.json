@@ -117,5 +117,24 @@
   },
   "forSwiper": {
     "messsage": "Swiper library is used to run the slider."
+  },
+  "Cart": {
+    "messsage": "Cart"
+  },
+  "Close": {
+    "messsage": "Close"
+  },
+  "Total": {
+    "messsage": "Total"
+  },
+  "AddToCart": {
+    "messsage": "+ Add To Cart"
+  },
+  "Remove": {
+    "messsage": "Remove"
+  },"InCart": {
+    "messsage": "In Cart"
+  },"Finalize": {
+    "messsage": "Finalize the purchase"
   }
 }

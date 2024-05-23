@@ -1,11 +1,11 @@
-import { list } from "../../../list";
+import { list } from "../../../../list";
 import RangeSlider from "./RangeSlider";
 import SearchInput from "./SearchInput";
-import { useDarkMode } from "../../../GlobalStates/ThemeProvider";
+import { useDarkMode } from "../../../../GlobalStates/ThemeProvider";
 import { MdOutlineContentPasteSearch } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../../GlobalStates/DataProvider";
+import { DataContext } from "../../../../GlobalStates/DataProvider";
 
 function SearchBar() {
   const { datalist, setFinalsearch, setDatalist, finalsearch } =
@@ -28,7 +28,7 @@ function SearchBar() {
   const MinYear = Math.min(...finalrange);
   const MaxYear = Math.max(...finalrange);
   const sortedrange = finalrange.sort((a, b) => a - b);
-  console.log(sortedrange);
+  // console.log(sortedrange);
   // setFinalsearch(finalinput);
   // setDatalist(finalsearch);
   // useEffect(() => {
@@ -104,11 +104,11 @@ function SearchBar() {
   } else if (finalsearch.length !== 0) {
     setDatalist(finalsearch);
   }
-  console.log(finalinput);
-  console.log(finalrange);
-  console.log(finalcompany);
-  console.log(finalgenre);
-  console.log(finalsearch);
+  // console.log(finalinput);
+  // console.log(finalrange);
+  // console.log(finalcompany);
+  // console.log(finalgenre);
+  // console.log(finalsearch);
 
   // const getyaer = (e)=> setCurrentyear(e.target.value)
   return (

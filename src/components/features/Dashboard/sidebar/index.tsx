@@ -24,7 +24,7 @@ export default function Sidebar() {
     {
       id: 23,
       title: t("cart.messsage"),
-      link: "/dashboard/orders",
+      link: "/dashboard/cart",
       icon: <IoCartOutline />,
     },
     {
@@ -32,12 +32,7 @@ export default function Sidebar() {
       title: t("account.messsage"),
       link: "/dashboard/settings",
       icon: <CiUser />,
-    },    {
-      id: 25,
-      title: t("product.messsage"),
-      link: "/dashboard/products",
-      icon: <CiUser />,
-    },
+    }, 
   ];
 
   return (

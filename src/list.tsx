@@ -12,6 +12,21 @@ import Hellpc from "./assets/images/Hellblade2/Hellblade-Senuas-Sacrifice-pc-cdk
 import HellX from "./assets/images/Hellblade2/Senua-s-Saga-Hellblade-II-xbox-cdkeyshareir-1.jpg"
 import TombPc from "./assets/images/RiseoftheTombRaider/Rise-of-the-Tomb-Raider-pc-cdkeyshareir-1.jpg"
 import TombX from "./assets/images/RiseoftheTombRaider/rise-of-the-tomb-raidr-xbox-13-252x345.jpg"
+import FC24PC from "./assets/images/eafc24/EA-Sports-FC-24-cdkeyshareir-15.jpg"
+import FC24X from "./assets/images/eafc24/EA-SPORTS-FC-24-xbox-cdkeyshareir-1.jpg"
+import FC24PS from "./assets/images/eafc24/EA-SPORTS-FC-24-ps-cdkeyshareir-1.jpg"
+import ACSHPC from "./assets/images/ACShadows/Assassins-Creed-Shadows-Pc-cdkeyshareir-1.jpg"
+import ACSHX from "./assets/images/ACShadows/Assassins-Creed-Shadows-Xbox-cdkeyshareir-1.jpg"
+import ACSHPS from "./assets/images/ACShadows/Assassins-Creed-Shadows-PS5-cdkeyshareir-1.jpg"
+import ACMPC from "./assets/images/ACMirage/Assassins-Creed-Mirage-pc-11.jpg"
+import ACMPS from "./assets/images/ACMirage/assassins-creed-mirage-ps-6.jpg"
+import ACMX from "./assets/images/ACMirage/assassins-creed-mirage-xbox-5.jpg"
+import AWPC from "./assets/images/AlanWake 2/Alan-Wake-2pc-org-1.jpg"
+import AWPS from "./assets/images/AlanWake 2/Alan-Wake-2-ps-1.jpg"
+import AWX from "./assets/images/AlanWake 2/Alan-Wake-2-xbox-1.jpg"
+import RE4PC from "./assets/images/RE4/PC-Orginal-final.jpg"
+import RE4PS from "./assets/images/RE4/PS6.jpg"
+import RE4X from "./assets/images/RE4/Xbox7-.jpg"
 import SHTombPc from "./assets/images/ShadowoftheTombRaiderDefinitive Edition/Shadow-of-the-Tomb-Raider-Definitive-Edition-pc-cdkeyshareir-1.jpg"
 import SHTombX from "./assets/images/ShadowoftheTombRaiderDefinitive Edition/shadow-of-the-tomb-raider-xbox-14-252x345.jpg"
 // import { useTranslation } from "react-i18next";
@@ -24,10 +39,10 @@ export const list = [
   {
     id: 1,
     name: "Elden Ring",
-    email: "Eliseo@gardner.biz",
     company: "FromSoftware",
     defaultImage: eldenps5,
     Year: 2022,
+    price : 60,
     images: {
       PC: eldenxpc,
       PS5: eldenps5,
@@ -43,10 +58,10 @@ export const list = [
   {
     id: 2,
     name: "God Of War Ragnarok",
-    email: "Jayne_Kuhic@sydney.com",
     company: "Santa Monica",
     defaultImage: GOWR,
     Year: 2022,
+    price : 60,
     genre: "Hack and Slash",
     images: {
       PS4: GOWR,
@@ -60,10 +75,10 @@ export const list = [
   {
     id: 3,
     name: "Forza Horizon 5",
-    email: "Nikita@garfield.biz",
     company: "Microsoft",
     defaultImage: forzaXbox,
     Year: 2021,
+    price : 60,
     images: {
       PC: forzaPC,
       XBOX: forzaXbox,
@@ -77,10 +92,10 @@ export const list = [
   {
     id: 4,
     name: "GTA VI",
-    email: "Lew@alysha.tv",
     company: "Rock Star",
     defaultImage: GTAVIPS5,
     Year: 2025,
+    price : 60,
     images: {
       PC: GTAVIPC,
       PS5: GTAVIPS5,
@@ -95,10 +110,10 @@ export const list = [
   {
     id: 5,
     name: "The Last Of Us Part 2",
-    email: "Hayden@althea.biz",
     company: "Naughty Dog",
     defaultImage: TLOU2,
     Year: 2020,
+    price : 60,
     images: {
       PS5: TLOU2,
     },
@@ -113,6 +128,7 @@ export const list = [
     company: "Ninja Theory",
     defaultImage: Hellpc,
     Year: 2024,
+    price : 60,
     images: {
       PC: Hellpc,
       XBOX: HellX,
@@ -127,6 +143,7 @@ export const list = [
     company: "Eidos-Montréal",
     defaultImage: TombPc,
     Year: 2015,
+    price : 60,
     images: {
       PC: TombPc,
       XBOX: TombX,
@@ -139,8 +156,9 @@ export const list = [
     id: 8,
     name: "Shadow of the Tomb Raider",
     company: "Eidos-Montréal",
-    defaultImage: SHTombPc,
+    defaultImage: SHTombX,
     Year: 2018,
+    price : 60,
     images: {
       PC: SHTombPc,
       XBOX: SHTombX,
@@ -149,5 +167,85 @@ export const list = [
     platform: ["PC", "XBOX"],
     story:
       "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+  },{
+    id: 9,
+    name: "EA FC 24",
+    company: "EA",
+    defaultImage: FC24PS,
+    Year: 2023,
+    price : 60,
+    images: {
+      PC: FC24PC,
+      XBOX: FC24X,
+      PS5: FC24PS
+    },
+    genre: "Sport",
+    platform: ["PC", "XBOX" , "PS5"],
+    story:
+      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+  },{
+    id: 10,
+    name: "Assassin's Creed Shadows",
+    company: "Ubisoft",
+    defaultImage: ACSHPS,
+    Year: 2024,
+    price : 60,
+    images: {
+      PC: ACSHPC,
+      XBOX: ACSHX,
+      PS5: ACSHPS
+    },
+    genre: "Advanture",
+    platform: ["PC", "XBOX" , "PS5"],
+    story:
+      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+  },{
+    id: 11,
+    name: "Assassin's Creed Mirage",
+    company: "Ubisoft",
+    defaultImage: ACMPS,
+    Year: 2023,
+    price : 60,
+    images: {
+      PC: ACMPC,
+      XBOX: ACMX,
+      PS5: ACMPS
+    },
+    genre: "Advanture",
+    platform: ["PC", "XBOX" , "PS5"],
+    story:
+      "در Assassin’s Creed Mirage، شما Basim هستید، یک دزد خیابانی حیله گر با دیدهای کابوس وار.",
+  },{
+    id: 12,
+    name: "Alan Wake 2",
+    company: "Ubisoft",
+    defaultImage: AWPC,
+    Year: 2023,
+    price : 60,
+    images: {
+      PC: AWPC,
+      XBOX: AWX,
+      PS5: AWPS
+    },
+    genre: "Survival horror",
+    platform: ["PC", "XBOX" , "PS5"],
+    story:
+      "Alan Wake 2 یک بازی ترسناک بقا با فضایی شدید و داستانی پیچیده، لایه‌ای و روان‌شناختی است.",
+  },{
+    id: 13,
+    name: "Resident Evil 4",
+    company: "Capcom",
+    defaultImage: RE4PC,
+    Year: 2023,
+    price : 60,
+    images: {
+      PC: RE4PC,
+      XBOX: RE4X,
+      PS5: RE4PS
+    },
+    genre: "Survival horror",
+    platform: ["PC", "XBOX" , "PS5"],
+    story:
+      "مامور ویژه لئون اس کندی به ماموریتی فرستاده می شود تا دختر رئیس جمهور ایالات متحده را که ربوده شده است نجات دهد.",
   },
 ];

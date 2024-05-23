@@ -117,5 +117,24 @@
   },
   "forSwiper": {
     "messsage": "برای اجرای اسلایدر از کتابخانه Swiper استفاده شده است ."
+  },
+  "Cart": {
+    "messsage": "سبد خرید"
+  },
+  "Close": {
+    "messsage": "بستن"
+  },
+  "Total": {
+    "messsage": "مجموع"
+  },
+  "AddToCart": {
+    "messsage": "+ اضافه کردن به سبد خرید"
+  },
+  "Remove": {
+    "messsage": "حذف از سبد خرید"
+  },"InCart": {
+    "messsage": "عدد در سبد خرید"
+  },"Finalize": {
+    "messsage": "نهایی کردن خرید"
   }
 }

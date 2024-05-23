@@ -20,7 +20,7 @@ function Favorite() {
   //   return data.map()
   // }
   return (
-    <div className="px-60">
+    <div className="px-60 pb-24">
       <h1 className="text-3xl font-semibold pb-5 cursor-pointer border-b-2 border-red-500">
         {t("yourlist.messsage")}
       </h1>
@@ -31,7 +31,7 @@ function Favorite() {
           <div></div>
         </div>
         {favorite.length == 0 ? (
-          <div>لیست شما خالیه</div>
+          <div className="pb-60">لیست شما خالیه</div>
         ) : (
           favorite.map(
             (item) => (
