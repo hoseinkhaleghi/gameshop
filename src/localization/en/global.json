@@ -151,6 +151,18 @@
   "Details": {
     "messsage": "Details"
   },
+  "forSearch": {
+    "messsage": "Search"
+  },
+  "Year": {
+    "messsage": "Year"
+  },
+  "Genre": {
+    "messsage": "Genre"
+  },
+  "Developer": {
+    "messsage": "Developer"
+  },
   "list": [
     {
       "id": 1,

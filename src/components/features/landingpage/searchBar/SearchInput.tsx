@@ -161,18 +161,8 @@ const Listbox = styled("ul")(
 `
 );
 
-export default function SearchInput({ finalinput, setFinalinput }) {
+export default function SearchInput({ setFinalinput }) {
   const { t } = useTranslation("global");
-  //   const [searchlist, setSearchlist] = React.useState([]);
-  // const [data, setData] = React.useState([]);
-  //   React.useEffect(() => {
-  //     setSearchlist(list);
-  //   }, [list]);
-  // const { datalist, setDatalist } = React.useContext(DataContext);
-  // React.useEffect(() => {
-  //   setData(datalist);
-  // }, [datalist]);
-  // console.log(data);
 
   const {
     getRootProps,
@@ -187,24 +177,10 @@ export default function SearchInput({ finalinput, setFinalinput }) {
     setAnchorEl,
   } = useAutocomplete({
     id: "customized-hook-demo",
-    // defaultValue: [list[0]],
     multiple: true,
     options: list,
     getOptionLabel: (option) => option.name,
   });
-  //   const [data, setData] = React.useState({});
-  //   React.useEffect(() => {
-  //     setDatalist(value);
-  //   }, [data]);
-  // if (value.length != 0) {
-  //     setDatalist(value);
-  //   }
-  // if (value.length === 0) {
-  //   setDatalist(list);
-  // } else {
-  //   setDatalist(value);
-  // }
-  // setFinalinput(value);
 
   React.useEffect(() => {
     setFinalinput(value);

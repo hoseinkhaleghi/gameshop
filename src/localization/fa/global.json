@@ -150,5 +150,17 @@
   },
   "Details": {
     "messsage": "جزئیات"
+  },
+  "forSearch": {
+    "messsage": "جستجو"
+  },
+  "Year": {
+    "messsage": "سال"
+  },
+  "Genre": {
+    "messsage": "ژانر"
+  },
+  "Developer": {
+    "messsage": "توسعه دهنده"
   }
 }

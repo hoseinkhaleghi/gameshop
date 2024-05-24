@@ -7,7 +7,7 @@ export function DataProvider({ children }: PropsWithChildren) {
   const [datalist, setDatalist] = useState([]);
   const [favoritelist, setFavoritelist] = useState([]);
   useEffect(() => {
-     setDatalist(list);
+    setDatalist(list);
   }, []);
   // useEffect(() => {
   //   setDatalist(list);
@@ -46,7 +46,14 @@ export function DataProvider({ children }: PropsWithChildren) {
     }));
   };
   //-----------------------------------------------------
-  
+  const [finalrange, setFinalrange] = useState([]);
+  useEffect(() => {
+    if (finalsearch.length === 0) {
+      setDatalist(list);
+    } else if (finalsearch.length !== 0) {
+      setDatalist(finalsearch);
+    }
+  }, [finalsearch]);
 
   return (
     <DataContext.Provider
@@ -62,6 +69,8 @@ export function DataProvider({ children }: PropsWithChildren) {
         favoritelist,
         selectedGameImages,
         setSelectedGameImages,
+        finalrange,
+        setFinalrange,
       }}
     >
       {children}

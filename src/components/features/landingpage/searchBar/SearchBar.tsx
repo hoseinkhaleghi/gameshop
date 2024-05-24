@@ -8,27 +8,24 @@ import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../../../GlobalStates/DataProvider";
 
 function SearchBar() {
-  const { datalist, setFinalsearch, setDatalist, finalsearch } =
-    useContext(DataContext);
+  const { t } = useTranslation("global");
+  const { setFinalsearch, finalrange } = useContext(DataContext);
 
-  // const Years = list.map((item) => item.Year);
-  // const Year = [...new Set(Years)].sort();
-  // console.log("big:" + MaxYear + "min" + MinYear);
-  // const [currentyear , setCurrentyear] = useState("")
   const Companies = list.map((item) => item.company);
   const Company = [...new Set([...Companies, "all"])].sort();
   const genres = list.map((item) => item.genre);
   const genre = [...new Set([...genres, "all"])].sort();
   const { isDarkMode } = useDarkMode();
   const { i18n } = useTranslation("global");
-  
+
   const [finalgenre, setFinalgenre] = useState("all");
   const [finalcompany, setFinalcompany] = useState("all");
-  const [finalrange, setFinalrange] = useState([]);
   const [finalinput, setFinalinput] = useState([]);
   const MinYear = Math.min(...finalrange);
   const MaxYear = Math.max(...finalrange);
   const sortedrange = finalrange.sort((a, b) => a - b);
+
+  //Searching
   useEffect(() => {
     if (
       finalinput.length !== 0 &&
@@ -94,18 +91,6 @@ function SearchBar() {
 
   //----------------------------------------
 
-  if (finalsearch.length === 0) {
-    setDatalist(list);
-  } else if (finalsearch.length !== 0) {
-    setDatalist(finalsearch);
-  }
-  // console.log(finalinput);
-  // console.log(finalrange);
-  // console.log(finalcompany);
-  // console.log(finalgenre);
-  // console.log(finalsearch);
-
-  // const getyaer = (e)=> setCurrentyear(e.target.value)
   return (
     <>
       <section
@@ -126,15 +111,17 @@ function SearchBar() {
               : "text-black bg-stone-200 p-10  lg:flex flex-col rounded-bl-full gap-4 justify-center items-center rounded-md hidden  "
           }
         >
-          <p>جستجو</p>
+          <p>
+          {t("forSearch.messsage")}
+          </p>
           <div className="text-red-400 text-5xl ">
             <MdOutlineContentPasteSearch />
           </div>
         </div>
         <div className="w-11/12 flex flex-col p-10">
-          <SearchInput finalinput={finalinput} setFinalinput={setFinalinput} />
+          <SearchInput setFinalinput={setFinalinput} />
           <div className="flex flex-col md:flex-row w-full gap-4 md:gap-10 mt-6">
-            <label htmlFor="company">سازنده</label>
+            <label htmlFor="company">{t("Developer.messsage")}</label>
             <select
               onChange={(e) => setFinalcompany(e.target.value)}
               name="company"
@@ -146,7 +133,7 @@ function SearchBar() {
                 <option key={index}>{item}</option>
               ))}
             </select>
-            <label htmlFor="genre">ژانر</label>
+            <label htmlFor="genre">{t("Genre.messsage")}</label>
             <select
               onChange={(e) => setFinalgenre(e.target.value)}
               value={finalgenre}
@@ -159,8 +146,8 @@ function SearchBar() {
               ))}
             </select>
 
-            <label htmlFor="Year">سال ساخت</label>
-            <RangeSlider setFinalrange={setFinalrange} />
+            <label htmlFor="Year">{t("Year.messsage")}</label>
+            <RangeSlider  />
           </div>
         </div>
       </section>
