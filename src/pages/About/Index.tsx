@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import Header from "../../components/features/landingpage/Header";
 import { useDarkMode } from "../../GlobalStates/ThemeProvider";
 
 function About() {
@@ -11,7 +10,6 @@ function About() {
       dir={i18n.language == "en" ? "ltr" : "rtl"}
     //   className={isDarkMode ? "bg-blue-950 text-white " : ""}
     >
-      <Header />
       <div className="flex flex-col gap-5 mx-5 lg:pt-16 ">
         <h3
           className={

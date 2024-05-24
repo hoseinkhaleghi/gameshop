@@ -132,9 +132,23 @@
   },
   "Remove": {
     "messsage": "حذف از سبد خرید"
-  },"InCart": {
+  },
+  "InCart": {
     "messsage": "عدد در سبد خرید"
-  },"Finalize": {
+  },
+  "Finalize": {
     "messsage": "نهایی کردن خرید"
+  },
+  "emptyshopping": {
+    "messsage": "سبد خرید شما خالی میباشد"
+  },
+  "emptylist": {
+    "messsage": "لیست علاقمندی های شما خالیه"
+  },
+  "Dashboard": {
+    "messsage": "داشبورد"
+  },
+  "Details": {
+    "messsage": "جزئیات"
   }
 }

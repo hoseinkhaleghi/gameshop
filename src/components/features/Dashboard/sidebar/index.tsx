@@ -7,7 +7,6 @@ import { VscHome } from "react-icons/vsc";
 import { CiUser } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { LuBox } from "react-icons/lu";
-import Header from "../../landingpage/Header";
 import { useTranslation } from "react-i18next";
 
 export default function Sidebar() {
@@ -37,7 +36,6 @@ export default function Sidebar() {
 
   return (
     <>
-      <Header />
       <div className="h-screen border-x-2 border-t-2 fixed sm:pt-20 lg:pt-20">
         <div>پروفایل کاربری</div>
         <ul className={classNames(`lg:w-60  flex flex-col md:px-4 pt-3`)}>

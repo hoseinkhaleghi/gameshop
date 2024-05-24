@@ -7,7 +7,7 @@ export function DataProvider({ children }: PropsWithChildren) {
   const [datalist, setDatalist] = useState([]);
   const [favoritelist, setFavoritelist] = useState([]);
   useEffect(() => {
-    setDatalist(list);
+     setDatalist(list);
   }, []);
   // useEffect(() => {
   //   setDatalist(list);
@@ -32,20 +32,21 @@ export function DataProvider({ children }: PropsWithChildren) {
       );
     setFavoritelist((favoritelist) => [...favoritelist, favoriteitem]);
   }
-  // console.log(favoritelist)
-  // useEffect(()=>{},[])
 
-  const [platform, setPlatform] = useState("ps5");
   const [finalsearch, setFinalsearch] = useState([]);
+
+  //Select Platform
   const [selectedGameImages, setSelectedGameImages] = useState({});
-  const [selectedPlatform, setSelectedPlatform] = useState(null);
+  // const [selectedPlatform, setSelectedPlatform] = useState(null);
   const handlePlatformClick = (gameId, platform) => {
-    setSelectedPlatform(platform);
+    // setSelectedPlatform(platform);
     setSelectedGameImages((prevImages) => ({
       ...prevImages,
       [gameId]: datalist.find((game) => game.id === gameId).images[platform],
     }));
   };
+  //-----------------------------------------------------
+  
 
   return (
     <DataContext.Provider
@@ -59,7 +60,6 @@ export function DataProvider({ children }: PropsWithChildren) {
         setFinalsearch,
         finalsearch,
         favoritelist,
-        platform,
         selectedGameImages,
         setSelectedGameImages,
       }}

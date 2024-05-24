@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string } from "yup";
 import { phone_or_email_regex } from "../../models/regex";
-import button from "../../components/common/button/button";
 import Logo from "../../assets/logo";
 import Input from "../../components/common/input/Input";
 import { useState } from "react";
@@ -12,7 +11,6 @@ import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 // import localStorage from 'local-storage';
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../../components/features/landingpage/Header";
 
 export default function Signin() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -61,7 +59,6 @@ export default function Signin() {
 
   return (
     <div>
-      <Header />
       <div className=" flex items-center justify-center gap-3 pt-24">
         <Logo />
         <h3 className="text-center text-2xl font-medium">خوش آمدید</h3>

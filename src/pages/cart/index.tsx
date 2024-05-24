@@ -5,6 +5,7 @@ import { list } from "../../list";
 import { CartItem } from "../../components/features/shopping/CartItem";
 import { useTranslation } from "react-i18next";
 import { useDarkMode } from "../../GlobalStates/ThemeProvider";
+import EmptyCard from "../../assets/images/shopping.png"
 
 // type ShoppingCartProps = {
 //   isOpen: boolean;
@@ -17,12 +18,15 @@ export function Cart() {
   console.log(cartItems.length);
   return (
     <>
-      <div className="px-60 pb-56 flex flex-col gap-5 h-full  rounded-md min-w-96 w-auto ">
+      <div className="px-60 pb-1  flex flex-col gap-5 h-full  rounded-md min-w-96 w-auto ">
         <h2 className="text-3xl font-semibold pb-5 cursor-pointer border-b-2 border-red-500">
           {t("Cart.messsage")}
         </h2>
         {cartItems.length === 0 ? (
-          <div className="pb-44">خالی</div>
+          <div className="flex flex-col pb-20 gap-5 items-center">
+            <h1 className="font-bold text-2xl">{t("emptyshopping.messsage")}</h1>
+            <img className=" w-72 h-72" src={EmptyCard} alt="" />
+          </div>
         ) : (
           cartItems.map((item) => (
             <CartItem key={item.id} id={item.id} quantity={item.quantity} />

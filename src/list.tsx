@@ -35,7 +35,6 @@ import SHTombX from "./assets/images/ShadowoftheTombRaiderDefinitive Edition/sha
 // import { GrPersonalComputer } from "react-icons/gr";
 
 export const list = [
-  
   {
     id: 1,
     name: "Elden Ring",
@@ -53,7 +52,7 @@ export const list = [
     platform: ["PC", "PS4" , "PS5", "XBOX"],
 
     story:
-      "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "Elden Ring is a 2022 action role-playing game developed by FromSoftware. It was directed by Hidetaka Miyazaki",
   },
   {
     id: 2,
@@ -70,7 +69,7 @@ export const list = [
     platform: ["PS4", "PS5"],
 
     story:
-      "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "God of War Ragnarök is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. ",
   },
   {
     id: 3,
@@ -87,7 +86,7 @@ export const list = [
     platform: ["PC", "XBOX"],
 
     story:
-      "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "Drive purpose-built rally monsters and conquer the rugged Sierra Nueva. Attack Horizon's most thrilling routes in timed rally and multi-car races.",
   },
   {
     id: 4,
@@ -95,7 +94,7 @@ export const list = [
     company: "Rock Star",
     defaultImage: GTAVIPS5,
     Year: 2025,
-    price : 60,
+    price : 80,
     images: {
       PC: GTAVIPC,
       PS5: GTAVIPS5,
@@ -105,7 +104,7 @@ export const list = [
     platform: ["PC", "PS5", "XBOX"],
 
     story:
-      "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.",
+      "Grand Theft Auto VI heads to the state of Leonida, home to the neon-soaked streets of Vice City and beyond in the biggest",
   },
   {
     id: 5,
@@ -120,7 +119,7 @@ export const list = [
     genre: "Advanture",
     platform: ["PS5"],
     story:
-      "در یک تمدن ویران شده، جایی که بازماندگان آلوده و سخت‌گیر بیداد می‌کنند، جوئل، قهرمان خسته، استخدام می‌شود تا الی 14 ساله را از یک منطقه قرنطینه نظامی به بیرون قاچاق کند.",
+      "The Last of Us Part II is a 2020 action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment",
   },
   {
     id: 6,
@@ -136,7 +135,7 @@ export const list = [
     genre: "Role-playing game",
     platform: ["PC", "XBOX"],
     story:
-      "دنباله برنده جایزه Hellblade: Senua’s Sacrifice، Senua در سفری بی رحمانه برای بقا از طریق اسطوره و عذاب وایکینگ ایسلند بازمی گردد. Senua با هدف نجات کسانی که قربانی وحشت…      ",
+      "Senua's Saga: Hellblade II is a 2024 action-adventure game developed by Ninja Theory and published by Xbox Game Studios. ",
   },{
     id: 7,
     name: "Rise of the Tomb Raider",
@@ -151,7 +150,7 @@ export const list = [
     genre: "Advanture",
     platform: ["PC", "XBOX"],
     story:
-      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+      "Rise of the Tomb Raider is a 2015 action-adventure game developed by Crystal Dynamics and published by Microsoft Studios and Square Enix.",
   },{
     id: 8,
     name: "Shadow of the Tomb Raider",
@@ -166,7 +165,7 @@ export const list = [
     genre: "Advanture",
     platform: ["PC", "XBOX"],
     story:
-      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+      "Shadow of the Tomb Raider is a 2018 action-adventure game developed by Eidos-Montréal and published by Square Enix's European subsidiary.",
   },{
     id: 9,
     name: "EA FC 24",
@@ -182,7 +181,7 @@ export const list = [
     genre: "Sport",
     platform: ["PC", "XBOX" , "PS5"],
     story:
-      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+    "EA Sports FC 24 is an association football-themed simulation video game developed by EA Vancouver and EA Romania and published by EA Sports.",
   },{
     id: 10,
     name: "Assassin's Creed Shadows",
@@ -198,7 +197,7 @@ export const list = [
     genre: "Advanture",
     platform: ["PC", "XBOX" , "PS5"],
     story:
-      "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. ",
+      "Assassin's Creed Shadows is an upcoming action role-playing video game developed by Ubisoft Quebec and published by Ubisoft, set to release in November 2024.",
   },{
     id: 11,
     name: "Assassin's Creed Mirage",
@@ -214,7 +213,7 @@ export const list = [
     genre: "Advanture",
     platform: ["PC", "XBOX" , "PS5"],
     story:
-      "در Assassin’s Creed Mirage، شما Basim هستید، یک دزد خیابانی حیله گر با دیدهای کابوس وار.",
+      "Assassin's Creed Mirage is a 2023 action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft. The game is the thirteenth major installment in the Assassin's Creed series and the successor to 2020's Assassin's Creed Valhalla. ",
   },{
     id: 12,
     name: "Alan Wake 2",
@@ -230,7 +229,7 @@ export const list = [
     genre: "Survival horror",
     platform: ["PC", "XBOX" , "PS5"],
     story:
-      "Alan Wake 2 یک بازی ترسناک بقا با فضایی شدید و داستانی پیچیده، لایه‌ای و روان‌شناختی است.",
+      "Alan Wake 2 is a 2023 survival horror video game developed by Remedy Entertainment and published by Epic Games Publishing.",
   },{
     id: 13,
     name: "Resident Evil 4",
@@ -246,6 +245,6 @@ export const list = [
     genre: "Survival horror",
     platform: ["PC", "XBOX" , "PS5"],
     story:
-      "مامور ویژه لئون اس کندی به ماموریتی فرستاده می شود تا دختر رئیس جمهور ایالات متحده را که ربوده شده است نجات دهد.",
+      "Resident Evil 4 is a survival horror game by Capcom, originally released for the GameCube in 2005. Players control the special agent Leon S. Kennedy on a mission to rescue the US president's daughter, Ashley Graham, who has been kidnapped by a religious cult in rural Spain.",
   },
 ];

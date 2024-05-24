@@ -1,16 +1,15 @@
-import { useContext, useState } from "react";
+import { SetStateAction, useContext, useState } from "react";
 import { GrFavorite } from "react-icons/gr";
 import { MdOutlineFavorite } from "react-icons/md";
 import styles from "./Products.module.css";
 import { useDarkMode } from "../../../../GlobalStates/ThemeProvider";
 import { DataContext } from "../../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
-import { CartItem } from "../../shopping/CartItem";
 import { useShoppingCart } from "../../../../GlobalStates/ShoppingCartContext";
-// import { list } from "../../../list";
+import { Link } from "react-router-dom";
+import { BiSolidMessageSquareDetail } from "react-icons/bi";
 
 function Products() {
-  console.log(CartItem)
   const {
     datalist,
     handleFavorite,
@@ -29,7 +28,7 @@ function Products() {
   // console.log(quantity)
   //------------------------------------
   const { isDarkMode } = useDarkMode();
-  const { t,i18n } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,7 +38,6 @@ function Products() {
   const dataForPage = datalist.slice(startIndex, endIndex);
   const npage = Math.ceil(datalist.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
-  // console.log([startIndex, endIndex, recordsPerPage]);
   const prevPage = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
@@ -52,7 +50,7 @@ function Products() {
       window.scroll({ top: 800, behavior: "smooth" });
     }
   };
-  const changePage = (id) => {
+  const changePage = (id: SetStateAction<number>) => {
     setCurrentPage(id);
     window.scroll({ top: 800, behavior: "smooth" });
   };
@@ -101,6 +99,12 @@ function Products() {
                   </button>
                 </div>
                 <h1 className="text-wrap hidden lg:flex">{item.story}</h1>
+                <Link to={`/products/${item.name}`}>
+                  <div className="text-blue-500 flex flex-row gap-4">
+                  <BiSolidMessageSquareDetail />
+                  <p>{t("Details.messsage")}</p>
+                  </div>
+                </Link>
                 <div className={styles.size}>
                   {item.platform.map((platform) => (
                     <button
@@ -124,9 +128,7 @@ function Products() {
                     </div>
                   ) : (
                     <div className="flex items-center flex-col gap-1">
-                      <div
-                        className="flex items-center justify-center gap-4"
-                      >
+                      <div className="flex items-center justify-center gap-4">
                         <button
                           className="border-2 cursor-pointer  
                           opacity-50 font-bold px-4 hover:opacity-100 

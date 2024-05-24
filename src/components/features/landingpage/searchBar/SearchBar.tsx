@@ -19,21 +19,16 @@ function SearchBar() {
   const Company = [...new Set([...Companies, "all"])].sort();
   const genres = list.map((item) => item.genre);
   const genre = [...new Set([...genres, "all"])].sort();
+  const { isDarkMode } = useDarkMode();
+  const { i18n } = useTranslation("global");
+  
   const [finalgenre, setFinalgenre] = useState("all");
   const [finalcompany, setFinalcompany] = useState("all");
   const [finalrange, setFinalrange] = useState([]);
   const [finalinput, setFinalinput] = useState([]);
-  const { isDarkMode } = useDarkMode();
-  const { i18n } = useTranslation("global");
   const MinYear = Math.min(...finalrange);
   const MaxYear = Math.max(...finalrange);
   const sortedrange = finalrange.sort((a, b) => a - b);
-  // console.log(sortedrange);
-  // setFinalsearch(finalinput);
-  // setDatalist(finalsearch);
-  // useEffect(() => {
-  // }, [finalsearch]);
-
   useEffect(() => {
     if (
       finalinput.length !== 0 &&

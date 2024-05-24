@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useDarkMode } from "./GlobalStates/ThemeProvider";
 import Router from "./routes/routes";
+import React from "react";
 
 function App() {
   const { i18n } = useTranslation("global");

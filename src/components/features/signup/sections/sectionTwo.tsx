@@ -1,8 +1,6 @@
 import { FormEvent, useState } from "react";
 import OtpInput from "react-otp-input";
 import { toast } from "react-toastify";
-import button from "../../../common/button/button";
-import Header from "../../landingpage/Header";
 interface Props {
   onSubmit: (data: number) => void;
   isLoading: boolean;
@@ -20,7 +18,6 @@ export default function SectionTwo({ onSubmit, isLoading }: Props) {
 
   return (
     <>
-      <Header />
       <form onSubmit={submitForm}>
         <h1 className="mt-[10rem] text-center text-3xl font-bold">
           کد خود را وارد نمایید

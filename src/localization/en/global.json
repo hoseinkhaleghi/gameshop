@@ -132,9 +132,228 @@
   },
   "Remove": {
     "messsage": "Remove"
-  },"InCart": {
+  },
+  "InCart": {
     "messsage": "In Cart"
-  },"Finalize": {
+  },
+  "Finalize": {
     "messsage": "Finalize the purchase"
-  }
+  },
+  "emptyshopping": {
+    "messsage": "Your shopping cart is empty"
+  },
+  "emptylist": {
+    "messsage": "Your Favorite List is empty"
+  },
+  "Dashboard": {
+    "messsage": "Dashboard"
+  },
+  "Details": {
+    "messsage": "Details"
+  },
+  "list": [
+    {
+      "id": 1,
+      "name": "Elden Ring",
+      "company": "FromSoftware",
+      "defaultImage": "eldenps5",
+      "Year": 2022,
+      "price": 60,
+      "images": {
+        "PC": "eldenxpc",
+        "PS5": "eldenps5",
+        "ps4": "eldenps5",
+        "XBOX": "eldenxbox"
+      },
+      "genre": "Role-playing game",
+      "platform": ["PC", "PS4", "PS5", "XBOX"],
+      "story": "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
+    },
+    {
+      "id": 2,
+      "name": "God Of War Ragnarok",
+      "company": "Santa Monica",
+      "defaultImage": "GOWR",
+      "Year": 2022,
+      "price": 60,
+      "genre": "Hack and Slash",
+      "images": {
+        "PS4": "GOWR",
+        "PS5": "GOWR"
+      },
+      "platform": ["PS4", "PS5"],
+      "story": "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
+    },
+    {
+      "id": 3,
+      "name": "Forza Horizon 5",
+      "company": "Microsoft",
+      "defaultImage": "forzaXbox",
+      "Year": 2021,
+      "price": 60,
+      "images": {
+        "PC": "forzaPC",
+        "XBOX": "forzaXbox"
+      },
+      "genre": "Drive",
+      "platform": ["PC", "XBOX"],
+      "story": "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
+    },
+    {
+      "id": 4,
+      "name": "GTA VI",
+      "company": "Rock Star",
+      "defaultImage": "GTAVIPS5",
+      "Year": 2025,
+      "price": 60,
+      "images": {
+        "PC": "GTAVIPC",
+        "PS5": "GTAVIPS5",
+        "XBOX": "GTAVIX"
+      },
+      "genre": "Open World",
+      "platform": ["PC", "PS5", "XBOX"],
+
+      "story": "loremIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available."
+    },
+    {
+      "id": 5,
+      "name": "The Last Of Us Part 2",
+      "company": "Naughty Dog",
+      "defaultImage": "TLOU2",
+      "Year": 2020,
+      "price": 60,
+      "images": {
+        "PS5": "TLOU2"
+      },
+      "genre": "Advanture",
+      "platform": ["PS5"],
+      "story": "در یک تمدن ویران شده، جایی که بازماندگان آلوده و سخت‌گیر بیداد می‌کنند، جوئل، قهرمان خسته، استخدام می‌شود تا الی 14 ساله را از یک منطقه قرنطینه نظامی به بیرون قاچاق کند."
+    },
+    {
+      "id": 6,
+      "name": "Senua’s Saga Hellblade II",
+      "company": "Ninja Theory",
+      "defaultImage": "Hellpc",
+      "Year": 2024,
+      "price": 60,
+      "images": {
+        "PC": "Hellpc",
+        "XBOX": "HellX"
+      },
+      "genre": "Role-playing game",
+      "platform": ["PC", "XBOX"],
+      "story": "دنباله برنده جایزه Hellblade: Senua’s Sacrifice، Senua در سفری بی رحمانه برای بقا از طریق اسطوره و عذاب وایکینگ ایسلند بازمی گردد. Senua با هدف نجات کسانی که قربانی وحشت…      "
+    },
+    {
+      "id": 7,
+      "name": "Rise of the Tomb Raider",
+      "company": "Eidos-Montréal",
+      "defaultImage": "TombPc",
+      "Year": 2015,
+      "price": 60,
+      "images": {
+        "PC": "TombPc",
+        "XBOX": "TombX"
+      },
+      "genre": "Advanture",
+      "platform": ["PC", "XBOX"],
+      "story": "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. "
+    },
+    {
+      "id": 8,
+      "name": "Shadow of the Tomb Raider",
+      "company": "Eidos-Montréal",
+      "defaultImage": "SHTombX",
+      "Year": 2018,
+      "price": 60,
+      "images": {
+        "PC": "SHTombPc",
+        "XBOX": "SHTombX"
+      },
+      "genre": "Advanture",
+      "platform": ["PC", "XBOX"],
+      "story": "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. "
+    },
+    {
+      "id": 9,
+      "name": "EA FC 24",
+      "company": "EA",
+      "defaultImage": "FC24PS",
+      "Year": 2023,
+      "price": 60,
+      "images": {
+        "PC": "FC24PC",
+        "XBOX": "FC24X",
+        "PS5": "FC24PS"
+      },
+      "genre": "Sport",
+      "platform": ["PC", "XBOX", "PS5"],
+      "story": "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. "
+    },
+    {
+      "id": 10,
+      "name": "Assassin's Creed Shadows",
+      "company": "Ubisoft",
+      "defaultImage": "ACSHPS",
+      "Year": 2024,
+      "price": 60,
+      "images": {
+        "PC": "ACSHPC",
+        "XBOX": "ACSHX",
+        "PS5": "ACSHPS"
+      },
+      "genre": "Advanture",
+      "platform": ["PC", "XBOX", "PS5"],
+      "story": "دنباله برنده لارا یک راز باستانی را کشف می کند که او را در تلاقی یک سازمان بی رحم به نام ترینیتی قرار می دهد. همانطور که او برای یافتن راز قبل از ترینیتی مسابقه می دهد، مسیر به افسانه ای در مورد شهر گمشده کیتژ منتهی می شود. لارا می داند که باید قبل از ترینیتی به شهر گمشده و اسرار پنهان آن برسد. "
+    },
+    {
+      "id": 11,
+      "name": "Assassin's Creed Mirage",
+      "company": "Ubisoft",
+      "defaultImage": "ACMPS",
+      "Year": 2023,
+      "price": 60,
+      "images": {
+        "PC": "ACMPC",
+        "XBOX": "ACMX",
+        "PS5": "ACMPS"
+      },
+      "genre": "Advanture",
+      "platform": ["PC", "XBOX", "PS5"],
+      "story": "در Assassin’s Creed Mirage، شما Basim هستید، یک دزد خیابانی حیله گر با دیدهای کابوس وار."
+    },
+    {
+      "id": 12,
+      "name": "Alan Wake 2",
+      "company": "Ubisoft",
+      "defaultImage": "AWPC",
+      "Year": 2023,
+      "price": 60,
+      "images": {
+        "PC": "AWPC",
+        "XBOX": "AWX",
+        "PS5": "AWPS"
+      },
+      "genre": "Survival horror",
+      "platform": ["PC", "XBOX", "PS5"],
+      "story": "Alan Wake 2 یک بازی ترسناک بقا با فضایی شدید و داستانی پیچیده، لایه‌ای و روان‌شناختی است."
+    },
+    {
+      "id": 13,
+      "name": "Resident Evil 4",
+      "company": "Capcom",
+      "defaultImage": "RE4PC",
+      "Year": 2023,
+      "price": 60,
+      "images": {
+        "PC": "RE4PC",
+        "XBOX": "RE4X",
+        "PS5": "RE4PS"
+      },
+      "genre": "Survival horror",
+      "platform": ["PC", "XBOX", "PS5"],
+      "story": "مامور ویژه لئون اس کندی به ماموریتی فرستاده می شود تا دختر رئیس جمهور ایالات متحده را که ربوده شده است نجات دهد."
+    }
+  ]
 }

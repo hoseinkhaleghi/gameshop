@@ -1,14 +1,12 @@
 import { FcGoogle } from "react-icons/fc";
 import Logo from "../../../../assets/logo";
 import Input from "../../../common/input/Input";
-import button from "../../../common/button/button";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string, ref } from "yup";
 import { phone_or_email_regex } from "../../../../models/regex";
 import { User } from "../../../../types/user.type";
-import Header from "../../landingpage/Header";
 
 interface Props {
   onSubmit: (data: User) => void;

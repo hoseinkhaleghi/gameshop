@@ -65,7 +65,7 @@ function Header() {
             </button>
           )}
           <Link to="/dashboard/favorite">
-            <span className="text-2xl">{t("favorite.messsage")}</span>
+            <span className="text-2xl">{t("Dashboard.messsage")}</span>
           </Link>
           <div>
             <button onClick={toggleDarkMode} className=" text-3xl">
@@ -117,10 +117,10 @@ function Header() {
             <div className="flex items-center justify-between">
               <div className="-m-1.5 p-1.5 flex flex-row items-center gap-2">
                 <Link to="/">
-                  <span className="text-2xl ">Wizard</span>
+                  <span className="text-2xl ">{t("Cando.messsage")}</span>
                 </Link>
                 <Link to="/signUp">
-                  <span className="text-2xl ">Signup</span>
+                  <span className="text-2xl ">{t("SignUp.messsage")}</span>
                 </Link>
               </div>
               <div className="flex lg:hidden">
@@ -136,29 +136,30 @@ function Header() {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 hover:text-gray-900">
-                    <Link to="/">
+                    <Link to="/about">
                       <span className="text-2xl">{t("about.messsage")}</span>
                     </Link>
                   </div>
                   <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7  hover:bg-gray-50 hover:text-gray-900">
-                    <button
-                      className="text-2xl"
-                      onClick={() => i18n.changeLanguage("fa")}
-                    >
-                      {t("Persian.messsage")}
-                    </button>
-                  </div>
-                  <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-gray-900 hover:bg-gray-50">
-                    <button
-                      className="text-2xl"
-                      onClick={() => i18n.changeLanguage("en")}
-                    >
-                      {t("English.messsage")}
-                    </button>
+                    {i18n.language === "fa" ? (
+                      <button
+                        className="text-2xl"
+                        onClick={() => i18n.changeLanguage("en")}
+                      >
+                        {t("English.messsage")}
+                      </button>
+                    ) : (
+                      <button
+                        className="text-2xl"
+                        onClick={() => i18n.changeLanguage("fa")}
+                      >
+                        {t("Persian.messsage")}
+                      </button>
+                    )}
                   </div>
                   <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-gray-900 hover:bg-gray-50">
                     <Link to="/dashboard/favorite">
-                      <span className="text-2xl">{t("favorite.messsage")}</span>
+                      <span className="text-2xl">{t("Dashboard.messsage")}</span>
                     </Link>
                   </div>
                   <div className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:text-gray-900 hover:bg-gray-50">
