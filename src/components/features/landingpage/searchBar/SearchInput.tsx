@@ -7,6 +7,7 @@ import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
 import { list } from "../../../../list";
 import { useTranslation } from "react-i18next";
+import { Game } from "../../../../GlobalStates/DataProvider";
 
 const Root = styled("div")(
   ({ theme }) => `
@@ -163,10 +164,11 @@ const Listbox = styled("ul")(
   }
 `
 );
+interface SearchInputProps {
+  setFinalinput: React.Dispatch<React.SetStateAction<Game[]>>; // تغییر نوع
+}
 
-
-
-export default function SearchInput({ setFinalinput }) {
+export default function SearchInput({ setFinalinput }: SearchInputProps) {
   const { t } = useTranslation("global");
 
   const {
@@ -180,36 +182,49 @@ export default function SearchInput({ setFinalinput }) {
     value,
     focused,
     setAnchorEl,
-  } = useAutocomplete({
+  } = useAutocomplete<Game, true>({
     id: "customized-hook-demo",
     multiple: true,
     options: list,
     getOptionLabel: (option) => option.name,
-  });
+    });
 
   React.useEffect(() => {
-    setFinalinput(value);
+    setFinalinput(value as Game[]);
   }, [value, setFinalinput]);
 
   return (
     <Root>
       <div {...getRootProps()}>
-        <Label className="font-bold" {...getInputLabelProps()}>{t("WhichGame.messsage")}</Label>
+        <Label className="font-bold" {...getInputLabelProps()}>
+          {t("WhichGame.messsage")}
+        </Label>
         <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
-          {value.map((option, index) => (
-            <StyledTag key={option.id} label={option.name} {...getTagProps({ index })} />
-          ))}
+          {(value as unknown as Game[]).map((option, index) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { key: _, ...tagProps } = getTagProps({ index });
+            return (
+              <StyledTag key={option.id} label={option.name} {...tagProps} />
+            );
+          })}
+
           <input {...getInputProps()} placeholder={t("Search.messsage")} />
         </InputWrapper>
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
-          {groupedOptions.map((option, index) => (
-            <li key={option.id} {...getOptionProps({ option, index })}>
-              <span>{option.name}</span>
-              <CheckIcon fontSize="small" />
-            </li>
-          ))}
+          {groupedOptions.map((option, index) => {
+            const gameOption = option as Game;
+            return (
+              <li
+                key={gameOption.id}
+                {...getOptionProps({ option: gameOption, index })}
+              >
+                <span>{gameOption.name}</span>
+                <CheckIcon fontSize="small" />
+              </li>
+            );
+          })}
         </Listbox>
       ) : null}
     </Root>
