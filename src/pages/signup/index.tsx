@@ -32,7 +32,7 @@ export default function Signup() {
   const signUp = (otp: number) => {
     setIsLoading(true);
     signup({ ...user!, otp })
-      .then((req) => {
+      .then(() => {
         setIsLoading(false);
         // localStorage('user', req.data);
         navigate('/dashboard');

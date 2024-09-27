@@ -5,11 +5,11 @@ import { useDarkMode } from "../../../../GlobalStates/ThemeProvider";
 import { MdOutlineContentPasteSearch } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../../../GlobalStates/DataProvider";
+import { DataContext, DataContextType } from "../../../../GlobalStates/DataProvider";
 
 function SearchBar() {
   const { t } = useTranslation("global");
-  const { setFinalsearch, finalrange } = useContext(DataContext);
+  const { setFinalsearch, finalrange } = useContext(DataContext) as DataContextType;
 
   const Companies = list.map((item) => item.company);
   const Company = [...new Set([...Companies, "all"])].sort();
@@ -23,7 +23,7 @@ function SearchBar() {
   const [finalinput, setFinalinput] = useState([]);
   const MinYear = Math.min(...finalrange);
   const MaxYear = Math.max(...finalrange);
-  const sortedrange = finalrange.sort((a, b) => a - b);
+  const sortedrange = finalrange.sort((a: number, b: number) => a - b);
 
   //Searching
   useEffect(() => {
@@ -87,7 +87,7 @@ function SearchBar() {
         })
       );
     }
-  }, [finalinput, finalcompany, finalgenre, MinYear, MaxYear, sortedrange]);
+  }, [finalinput, finalcompany, finalgenre, MinYear, MaxYear, sortedrange, setFinalsearch]);
 
   //----------------------------------------
 

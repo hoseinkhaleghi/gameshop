@@ -3,7 +3,6 @@ import { formatCurrency } from "../../../utilities/formatCurrency";
 import { list } from "../../../list";
 import { CartItem } from "./CartItem";
 import { useTranslation } from "react-i18next";
-// import { Link } from "react-router-dom";
 
 type ShoppingCartProps = {
   isOpen: boolean;
@@ -35,19 +34,16 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
           {t("Close.messsage")}
         </button>
         <button className="bg-green-500 text-white rounded-sm px-4 py-2 ">
-        {/* <Link to="/dashboard/favorite"> */}
-
           <a href="http://localhost:5173/dashboard/cart">
             {t("Finalize.messsage")}
           </a>
-          {/* </Link> */}
         </button>
       </div>
     </div>
   );
 }
 
-function calculateTotal(cartItems: any[]) {
+function calculateTotal(cartItems: { id: number; quantity: number }[]) {
   return cartItems.reduce(
     (total: number, cartItem: { id: number; quantity: number }) => {
       const item = list.find((i) => i.id === cartItem.id);

@@ -15,7 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Signin() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
-
+console.log(isLoading)
   const schema = object({
     emailOrPhonenumber: string()
       .matches(
@@ -46,7 +46,7 @@ export default function Signin() {
   }) => {
     setIsLoading(true);
     signin(data)
-      .then((req) => {
+      .then(() => {
         setIsLoading(false);
         // localStorage('user', req.data);
         navigate("/dashboard");
@@ -89,14 +89,14 @@ export default function Signin() {
           <p className="text-red-500 text-xs">{errors.password.message}</p>
         ) : null}
 
-        <button type="submit" loading={isLoading} className="mt-5">
+        <button type="submit" className="mt-5">
           ورود به حساب کاربری
         </button>
       </form>
       <h3 className="mt-10 text-center">
         تاکنون ثبت نام نکرده اید؟
         <Link to="/signup" className="mr-2 font-bold text-primary">
-          ورود
+          ثبت نام
         </Link>
       </h3>
 

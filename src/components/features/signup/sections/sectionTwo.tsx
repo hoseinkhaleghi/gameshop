@@ -6,7 +6,7 @@ interface Props {
   isLoading: boolean;
 }
 
-export default function SectionTwo({ onSubmit, isLoading }: Props) {
+export default function SectionTwo({ onSubmit }: Props) {
   const [otp, setOtp] = useState<string>();
 
   const submitForm = (e: FormEvent<HTMLFormElement>) => {
@@ -36,7 +36,7 @@ export default function SectionTwo({ onSubmit, isLoading }: Props) {
             renderInput={(props) => <input {...props} />}
           />
         </div>
-        <button type="submit" className="mt-20" loading={isLoading}>
+        <button type="submit" className="mt-20">
           ساخت اکانت
         </button>
       </form>

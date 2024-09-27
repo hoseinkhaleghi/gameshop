@@ -13,7 +13,7 @@ interface Props {
   isLoading: boolean;
 }
 
-export default function SectionOne({ onSubmit, isLoading }: Props) {
+export default function SectionOne({ onSubmit }: Props) {
   const schema = object({
     fullName: string().min(2).required(),
     emailOrPhonenumber: string()
@@ -45,12 +45,12 @@ export default function SectionOne({ onSubmit, isLoading }: Props) {
 
   return (
     <main>
-      <div className=" flex items-center justify-center gap-3 mt-24">
+      <div className=" flex items-center justify-center gap-2 mt-24">
         <Logo />
         <h3 className="text-center text-2xl font-medium">خوش آمدید</h3>
       </div>
       <form
-        className="mt-10 flex flex-col gap-5"
+        className="mt-4 flex flex-col gap-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <Input
@@ -92,17 +92,17 @@ export default function SectionOne({ onSubmit, isLoading }: Props) {
             {errors.passwordConfirm.message}
           </p>
         ) : null}
-        <button type="submit" loading={isLoading} className="mt-5">
+        <button type="submit"  className="mt-5">
           ایجاد حساب کاربری
         </button>
       </form>
-      <h3 className="mt-10 text-center">
+      <h3 className="mt-5 text-center">
         قبلا ثبت نام کرده اید؟
         <Link to="/signin" className="mr-2 font-bold text-primary">
           ورود
         </Link>
       </h3>
-      <div className="flex items-center justify-center gap-5 mt-10 w-full">
+      <div className="flex items-center justify-center gap-5 mt-5 w-full">
         <button className="max-w-64 w-full flex items-center justify-center gap-3 py-2 rounded-md border border-gray-300">
           <FcGoogle size={25} />
           <h3>ورود با گوگل</h3>

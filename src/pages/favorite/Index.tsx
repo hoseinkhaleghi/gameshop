@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DataContext } from "../../GlobalStates/DataProvider";
+import { DataContext, DataContextType } from "../../GlobalStates/DataProvider";
 import { MdOutlineFavorite } from "react-icons/md";
 import EmptyList from "../../assets/images/bag.png";
 import { useTranslation } from "react-i18next";
@@ -20,7 +20,7 @@ function Favorite() {
     favoritelist,
     selectedGameImages,
     handlePlatformClick,
-  } = useContext(DataContext);
+  } = useContext(DataContext) as DataContextType;
   const { t } = useTranslation("global");
   // function handleFavorite(id) {
   //   const newFavorites = datalist.map((item) => {
@@ -88,7 +88,7 @@ function Favorite() {
                   <button
                     className="border-2 p-4 rounded-md"
                     key={platform}
-                    onClick={() => handlePlatformClick(item.id, platform)}
+                    onClick={() => handlePlatformClick(item.id, platform as keyof typeof item.images)}
                   >
                     {platform}
                   </button>

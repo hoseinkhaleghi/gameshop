@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useShoppingCart } from "../../../GlobalStates/ShoppingCartContext";
 import { list } from "../../../list";
 import { formatCurrency } from "../../../utilities/formatCurrency";
-import { DataContext } from "../../../GlobalStates/DataProvider";
+import { DataContext, DataContextType } from "../../../GlobalStates/DataProvider";
 
 type CartItemProps = {
   id: number;
@@ -10,7 +10,7 @@ type CartItemProps = {
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { selectedGameImages } = useContext(DataContext);
+  const { selectedGameImages } = useContext(DataContext) as DataContextType;
   const { removeFromCart } = useShoppingCart();
   const item = list.find((i) => i.id === id);
   if (item == null) return null;

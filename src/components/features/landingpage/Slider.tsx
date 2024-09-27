@@ -4,7 +4,6 @@ import headerpic3 from "../../../assets/images/TLOU2.jpg";
 // import button from "../../common/button/button.tsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, Scrollbar } from "swiper/modules";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function Slider() {

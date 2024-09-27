@@ -3,7 +3,7 @@ import { GrFavorite } from "react-icons/gr";
 import { MdOutlineFavorite } from "react-icons/md";
 import styles from "./Products.module.css";
 import { useDarkMode } from "../../../../GlobalStates/ThemeProvider";
-import { DataContext } from "../../../../GlobalStates/DataProvider";
+import { DataContext, DataContextType } from "../../../../GlobalStates/DataProvider";
 import { useTranslation } from "react-i18next";
 import { useShoppingCart } from "../../../../GlobalStates/ShoppingCartContext";
 import { Link } from "react-router-dom";
@@ -16,17 +16,15 @@ function Products() {
     favoritelist,
     selectedGameImages,
     handlePlatformClick,
-  } = useContext(DataContext);
-  //-----------------------------------
+  } = useContext(DataContext) as DataContextType;
+
   const {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart();
-  // const quantity = getItemQuantity();
-  // console.log(quantity)
-  //------------------------------------
+
   const { isDarkMode } = useDarkMode();
   const { t, i18n } = useTranslation("global");
 
@@ -38,24 +36,25 @@ function Products() {
   const dataForPage = datalist.slice(startIndex, endIndex);
   const npage = Math.ceil(datalist.length / recordsPerPage);
   const numbers = [...Array(npage + 1).keys()].slice(1);
+
   const prevPage = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
       window.scroll({ top: 800, behavior: "smooth" });
     }
   };
+
   const nextPage = () => {
     if (currentPage !== npage) {
       setCurrentPage(currentPage + 1);
       window.scroll({ top: 800, behavior: "smooth" });
     }
   };
+
   const changePage = (id: SetStateAction<number>) => {
     setCurrentPage(id);
     window.scroll({ top: 800, behavior: "smooth" });
   };
-  //-------------------------------------------
-
   return (
     <>
       <div className={styles.cont}>
@@ -109,7 +108,7 @@ function Products() {
                   {item.platform.map((platform) => (
                     <button
                       key={platform}
-                      onClick={() => handlePlatformClick(item.id, platform)}
+                      onClick={() => handlePlatformClick(item.id, platform as keyof typeof item.images)}
                     >
                       {platform}
                     </button>

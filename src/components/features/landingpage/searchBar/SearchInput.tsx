@@ -5,7 +5,6 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import { autocompleteClasses } from "@mui/material/Autocomplete";
-// import { DataContext } from "../../../GlobalStates/DataProvider";
 import { list } from "../../../../list";
 import { useTranslation } from "react-i18next";
 
@@ -63,8 +62,12 @@ const InputWrapper = styled("div")(
 `
 );
 
-function Tag(props) {
-  const { label, onDelete, ...other } = props;
+interface TagProps {
+  label: string;
+  onDelete: (event: React.MouseEvent<SVGElement>) => void; // تغییر نوع
+}
+
+function Tag({ label, onDelete, ...other }: TagProps) {
   return (
     <div {...other}>
       <span>{label}</span>
@@ -161,6 +164,8 @@ const Listbox = styled("ul")(
 `
 );
 
+
+
 export default function SearchInput({ setFinalinput }) {
   const { t } = useTranslation("global");
 
@@ -184,7 +189,7 @@ export default function SearchInput({ setFinalinput }) {
 
   React.useEffect(() => {
     setFinalinput(value);
-  }, [value]);
+  }, [value, setFinalinput]);
 
   return (
     <Root>
@@ -192,7 +197,7 @@ export default function SearchInput({ setFinalinput }) {
         <Label className="font-bold" {...getInputLabelProps()}>{t("WhichGame.messsage")}</Label>
         <InputWrapper ref={setAnchorEl} className={focused ? "focused" : ""}>
           {value.map((option, index) => (
-            <StyledTag label={option.name} {...getTagProps({ index })} />
+            <StyledTag key={option.id} label={option.name} {...getTagProps({ index })} />
           ))}
           <input {...getInputProps()} placeholder={t("Search.messsage")} />
         </InputWrapper>
@@ -200,7 +205,7 @@ export default function SearchInput({ setFinalinput }) {
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>
+            <li key={option.id} {...getOptionProps({ option, index })}>
               <span>{option.name}</span>
               <CheckIcon fontSize="small" />
             </li>
